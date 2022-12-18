@@ -46,18 +46,86 @@ body {
   background-image: url("../images/wallpaper.jpg");
   background-size: cover;
   height: 100vh;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .main {
   background-color: red;
   opacity: 0.5;
   width: 100%;
-  height: 95%;
+  height: 95.65%;
 }
 
 .taskbar {
   width: 100%;
-  height: 5%;
+  height: 4.35%;
   background-color: black;
   opacity: 0.5;
+  display: flex;
+  justify-content: space-between;
+}
+.taskbar--icon {
+  width: 2.545vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+.taskbar__left {
+  height: 100%;
+  background-color: green;
+  opacity: 0.25;
+  width: fit-content;
+  display: flex;
+}
+.taskbar__left-windows {
+  background-color: orange;
+  opacity: 0.75;
+}
+.taskbar__left-windows i {
+  font-size: 1.2vw;
+}
+.taskbar__left-search {
+  background-color: aqua;
+  opacity: 0.6;
+}
+.taskbar__left-search i {
+  transform: rotatey(180deg);
+  font-size: 0.95vw;
+}
+.taskbar__left-active {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+}
+.taskbar__left-active-chrome {
+  padding: 0.525rem;
+}
+.taskbar__left-active-chrome img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.taskbar__left-active-calculator {
+  padding: 0.425rem;
+}
+.taskbar__left-active-calculator img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.taskbar__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 0.25vw;
+}
+.taskbar__right-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: white;
 }

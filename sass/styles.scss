@@ -46,18 +46,111 @@ body {
     background-image: url("../images/wallpaper.jpg");
     background-size: cover;
     height: 100vh;
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .main {
     background-color: red;
     opacity: .5;
     width: 100%;
-    height: 95%;
+    height: 95.65%;
 }
 
 .taskbar {
     width: 100%;
-    height: 5%;
+    height: 4.35%;
     background-color: black;
     opacity: .5;
+    display: flex;
+    justify-content: space-between;
+
+    &--icon {
+        width: 2.545vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+    }
+
+    // Left-Side Taskbar
+    &__left {
+        height: 100%;
+        background-color: green;
+        opacity: .25;
+        width: fit-content;
+        display: flex;
+
+
+        &-windows {
+            background-color: orange;
+            opacity: .75;
+
+            i {
+
+                font-size: 1.2vw;
+            }
+        }
+
+        &-search {
+            background-color: aqua;
+            opacity: .6;
+
+            i {
+                transform: rotatey(180deg);
+                font-size: .95vw;
+            }
+        }
+
+        &-active {
+            width: fit-content;
+            height: 100%;
+            display: flex;
+
+            &-chrome {
+                padding: .525rem;
+
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &-calculator {
+                padding: .425rem;
+
+                img {
+                    object-fit: contain;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+
+
+    // Right Side Taskbar
+    &__right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: .25vw;
+
+        &-time {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: .75rem;
+            color: white;
+
+            // Time
+            p {}
+
+            // Date
+            p {}
+        }
+    }
 }
