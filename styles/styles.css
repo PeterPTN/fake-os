@@ -1,0 +1,63 @@
+/* Global CSS styles */
+:root {
+  font-size: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  list-style: none;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Single line truncate */
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Multi line truncate */
+.multi-truncate {
+  line-height: 2rem;
+  max-height: 4rem;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+
+/* ---- Styles ---- */
+body {
+  background-image: url("../images/wallpaper.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.main {
+  background-color: red;
+  opacity: 0.5;
+  width: 100%;
+  height: 95%;
+}
+
+.taskbar {
+  width: 100%;
+  height: 5%;
+  background-color: black;
+  opacity: 0.5;
+}
