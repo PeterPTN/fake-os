@@ -51,8 +51,6 @@ body {
 }
 
 .desktop {
-    background-color: red;
-    opacity: .5;
     width: 100%;
     height: 95.65%;
     position: relative;
@@ -71,7 +69,7 @@ body {
     }
 
     &__icon {
-        display:flex;
+        display: flex;
         flex-direction: column;
         align-items: center;
         margin-left: .5rem;
@@ -85,25 +83,138 @@ body {
         img {
             width: 100%;
             height: 100%;
-            padding: .15rem;
+            padding: .1rem .15rem .45rem .15rem;
             object-fit: contain;
-            
+
         }
     }
 
-    
+    &__icon-bin {}
 
-    &__icon-bin {
+    &__icon-recycle-bin.empty {}
+
+    &__icon-calculator {}
+
+    &__icon-chrome {}
+
+
+    // Calculator App
+    &__calculator {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 700px;
+        height: 500px;
+        position: relative;
+        top: 10rem;
+        margin: 0 auto;
+
+        &-header {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            flex: 1;
+
+            &-first {
+                display: flex;
+                align-items: stretch;
+                justify-content: flex-start;
+                background-color: darkred;
+                flex: 1.25;
+
+                &-leftbar {
+                    display: flex;
+                    align-items: center;
+                    background-color: greenyellow;
+
+                    i {
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        width: 100%;
+                        padding: 0 1rem;
+                        transition: all .2s;
+                    
+                    }
+                }
+                
+                &-middlebar {
+                    background-color: bisque;
+                    display: flex;
+                    align-items: stretch;
+                    font-size: .75rem;
+                    flex: 1;
+                    border-top: 4px solid white;
+
+                    p {
+                        display: flex;
+                        align-items: center;
+                        padding: 0 2rem;
+                    }
+
+                    // Manage
+                    p:first-child {
+                        background-color: lavender;
+                        margin-left: 5rem;
+                    }
+
+                    p:last-child {
+                        opacity: .5;
+                    }
+
+                }
+
+                &-rightbar {
+                    display: flex;
+                    align-items: center;
+                    justify-self: center;
+
+                    i {
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        width: 100%;
+                        padding: 0 1rem;
+                        transition: all .2s;
+                    }
+
+                    // Dash
+                    i:first-child {}
+
+                    // Square
+                    i:nth-child(2) {
+                        font-size: .75rem;
+                    }
+
+                    i:last-child {
+                        font-size: 1.1rem;
+                    }
+
+                    i:hover {
+                        background-color: lightcoral;
+                    }
+                }
+            }
+
+            &-second {
+                background-color: red;
+                flex: 1;
+            }
+
+            &-third {
+                flex: 1;
+            }
+        }
+
+        &-body {
+            flex: 5;
+        }
     }
 
-    &__icon-recycle-bin.empty {
-    }
+    // Recycle Bin App
 
-    &__icon-calculator {
-    }
 
-    &__icon-chrome {
-    }
+    // Chrome App
 }
 
 .taskbar {
@@ -178,8 +289,6 @@ body {
             }
         }
     }
-
-
 
     // Right Side Taskbar
     &__right {
