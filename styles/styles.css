@@ -13,6 +13,8 @@
   scroll-behavior: smooth;
   list-style: none;
   --grey: rgba(211, 211, 211, 0.5);
+  --lightblue: rgba(200, 228, 238, 0.315);
+  --blueborder: rgba(124, 193, 240, 0.726);
 }
 
 .text-center {
@@ -141,8 +143,8 @@ body {
   padding: 3px 0;
 }
 .desktop__bin-header-first-leftbar-paper:hover {
-  border: 1px solid blue;
-  background-color: lightblue;
+  border: 1px solid var(--blueborder);
+  background-color: var(--lightblue);
 }
 .desktop__bin-header-first-leftbar-arrow-container {
   display: flex;
@@ -162,8 +164,8 @@ body {
   padding-bottom: 3px;
 }
 .desktop__bin-header-first-leftbar-arrow-container:hover {
-  border: 1px solid blue;
-  background-color: lightblue;
+  border: 1px solid var(--blueborder);
+  background-color: var(--lightblue);
 }
 .desktop__bin-header-first-leftbar p {
   position: relative;
@@ -187,9 +189,8 @@ body {
 }
 .desktop__bin-header-first-middlebar p:first-child {
   padding: 0 2rem;
-  background-color: lavender;
+  background-color: rgb(238, 202, 255);
   margin-left: 10.5rem;
-  border: 1px solid var(--grey);
 }
 .desktop__bin-header-first-middlebar .bin-tag:last-child {
   opacity: 0.5;
@@ -239,7 +240,7 @@ body {
 }
 .desktop__bin-header-second-left {
   display: flex;
-  width: 23.55rem;
+  width: 23.4rem;
 }
 .desktop__bin-header-second-left * {
   flex: 1;
@@ -255,10 +256,13 @@ body {
   color: white;
   transition: all 0.15s;
 }
+.desktop__bin-header-second-left p:nth-child(4) {
+  margin-right: 3px;
+}
 .desktop__bin-header-second-left p:last-child {
   position: relative;
   top: -2px;
-  flex: 1.65;
+  flex: 1.625;
   border: solid 1px transparent;
   border-top: solid 1px transparent;
   background: linear-gradient(white, white) padding-box, linear-gradient(var(--grey), rgb(255, 255, 255)) border-box;
@@ -268,10 +272,10 @@ body {
   border-right: 1px solid var(--grey);
 }
 .desktop__bin-header-second-left p:first-child:hover {
-  background-color: red;
+  background-color: rgb(197, 48, 48);
 }
 .desktop__bin-header-second-left p:last-child:hover {
-  border: 1px solid purple;
+  border: 1px solid rgb(238, 202, 255);
   border-bottom: solid 1px transparent;
 }
 .desktop__bin-header-second-right {
@@ -291,8 +295,8 @@ body {
   color: grey;
 }
 .desktop__bin-header-second-right i:hover {
-  border: 1px solid blue;
-  background-color: lightblue;
+  border: 1px solid var(--blueborder);
+  background-color: var(--lightblue);
 }
 .desktop__bin-header-second-right img {
   height: 100%;
@@ -326,8 +330,8 @@ body {
   border: 1px solid transparent;
 }
 .desktop__bin-header-third-leftbar p:last-child:hover {
-  border: 1px solid blue;
-  background-color: lightblue;
+  border: 1px solid var(--blueborder);
+  background-color: var(--lightblue);
 }
 .desktop__bin-header-third-middlebar {
   flex: 3;
@@ -353,7 +357,6 @@ body {
 .desktop__bin-header-third-middlebar-left p {
   font-size: 0.75rem;
   position: relative;
-  top: -1px;
 }
 .desktop__bin-header-third-middlebar-left i,
 .desktop__bin-header-third-middlebar-left p {
@@ -366,8 +369,8 @@ body {
 }
 .desktop__bin-header-third-middlebar-left i:hover,
 .desktop__bin-header-third-middlebar-left p:hover {
-  border: 1px solid blue;
-  background-color: lightblue;
+  border: 1px solid var(--blueborder);
+  background-color: var(--lightblue);
 }
 .desktop__bin-header-third-middlebar-right {
   display: flex;
@@ -382,12 +385,12 @@ body {
   font-size: 0.75rem;
   color: grey;
 }
-.desktop__bin-header-third-middlebar-right i:hover {
-  border: 1px solid blue;
-  background-color: lightblue;
-}
 .desktop__bin-header-third-middlebar-right i:last-child {
   border-left: 1px solid var(--grey);
+}
+.desktop__bin-header-third-middlebar-right i:hover {
+  border: 1px solid var(--blueborder);
+  background-color: var(--lightblue);
 }
 .desktop__bin-header-third-rightbar {
   flex: 1;
@@ -413,7 +416,7 @@ body {
   border: none;
   margin: 0.15rem 0;
   font-size: 0.75rem;
-  padding: 0.25rem 0 0.15rem;
+  padding: 0.15rem 0 0.15rem;
 }
 .desktop__bin-header-third-rightbar form input:focus {
   outline: none;
@@ -427,29 +430,118 @@ body {
   display: flex;
 }
 .desktop__bin-header-third-rightbar form .bin-clear:hover {
-  background-color: lightblue;
-  border: 1px solid blue;
+  background-color: var(--lightblue);
 }
 .desktop__bin-header-third-rightbar form .bin-clear.open {
   display: flex;
 }
 .desktop__bin-header-third-rightbar form .bin-button {
-  background-color: red;
+  background-color: rgb(197, 48, 48);
   border: none;
-  color: white;
-}
-.desktop__bin-header-third-rightbar form .bin-button:hover {
-  background-color: lightcoral;
+  color: rgb(241, 241, 241);
 }
 .desktop__bin-header-third-rightbar form .bin-button.open {
   display: block;
 }
-.desktop__bin-header-third-rightbar form i,
+.desktop__bin-header-third-rightbar form i {
+  padding: 0 0.25rem;
+}
 .desktop__bin-header-third-rightbar form button {
   padding: 0 0.5rem;
 }
 .desktop__bin-body {
   flex: 5;
+  display: flex;
+}
+.desktop__bin-body-side {
+  flex: 1.5;
+  border-right: 1px solid rgba(128, 128, 128, 0.082);
+}
+.desktop__bin-body-side ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.desktop__bin-body-side li {
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  padding: 2px 10px;
+  column-gap: 10px;
+}
+.desktop__bin-body-side li p {
+  font-size: 0.8rem;
+}
+.desktop__bin-body-side li i {
+  color: grey;
+  font-size: 0.65rem;
+}
+.desktop__bin-body-side li img {
+  height: 100%;
+  width: 14%;
+  object-fit: contain;
+}
+.desktop__bin-body-side li i:hover {
+  color: teal;
+}
+.desktop__bin-body-side li:hover {
+  background-color: var(--lightblue);
+}
+.desktop__bin-body-main {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  /* To be implemeneted eventually 8-)
+  &-header {
+      flex: 1;
+      display: flex;
+      background-color: red;
+
+      * {
+          flex: 1;
+      }
+
+      *:hover {
+          background: var(--lightblue);
+      }
+  }
+  */
+}
+.desktop__bin-body-main-items {
+  flex: 5;
+  margin: auto;
+  font-size: 0.77rem;
+  color: grey;
+}
+.desktop__bin-body-main-items p {
+  margin-top: 1rem;
+}
+.desktop__bin-footer {
+  height: 1.55rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 2px;
+}
+.desktop__bin-footer-leftbar {
+  margin-left: 10px;
+  font-size: 0.77rem;
+  display: flex;
+  align-items: center;
+}
+.desktop__bin-footer-rightbar {
+  display: flex;
+  justify-content: flex-end;
+}
+.desktop__bin-footer-rightbar img {
+  box-sizing: content-box;
+  height: 90%;
+  width: 37.5%;
+  padding: 0px 1px;
+  object-fit: contain;
+}
+.desktop__bin-footer-rightbar img:first-child {
+  border: 1px solid var(--blueborder);
+  background: var(--lightblue);
 }
 .taskbar {
   width: 100%;

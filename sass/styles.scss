@@ -13,6 +13,8 @@
     scroll-behavior: smooth;
     list-style: none;
     --grey: rgba(211, 211, 211, 0.5);
+    --lightblue: rgba(200, 228, 238, 0.315);
+    --blueborder: rgba(124, 193, 240, 0.726);
 }
 
 .text-center {
@@ -145,7 +147,7 @@ body {
                     column-gap: .25rem;
                     padding: 5px;
 
-                
+
                     &-bin,
                     &-paper,
                     &-folder {
@@ -154,7 +156,7 @@ body {
                     }
 
                     &-tick {
-                     
+
                         position: absolute;
                         height: .35rem;
                         width: .35rem;
@@ -168,8 +170,8 @@ body {
                     }
 
                     &-paper:hover {
-                        border: 1px solid blue;
-                        background-color: lightblue;
+                        border: 1px solid var(--blueborder);
+                        background-color: var(--lightblue);
                     }
 
                     &-arrow-container {
@@ -193,8 +195,8 @@ body {
                     }
 
                     &-arrow-container:hover {
-                        border: 1px solid blue;
-                        background-color: lightblue;
+                        border: 1px solid var(--blueborder);
+                        background-color: var(--lightblue);
                     }
 
                     p {
@@ -207,7 +209,7 @@ body {
 
                 &-middlebar.focus {
                     border-top: 3px solid red;
-                  
+
                 }
 
                 &-middlebar {
@@ -226,9 +228,8 @@ body {
                     // Manage
                     p:first-child {
                         padding: 0 2rem;
-                        background-color: lavender;
+                        background-color: rgb(238, 202, 255);
                         margin-left: 10.5rem;
-                        border: 1px solid var(--grey);
                     }
 
                     // Recycline Bin
@@ -258,7 +259,7 @@ body {
                         padding: 0 1rem;
                         transition: all .2s;
                         color: rgba(65, 65, 65, 0.418);
-                       
+
                     }
 
                     // Dash
@@ -297,7 +298,7 @@ body {
 
                 &-left {
                     display: flex;
-                    width: 23.55rem;
+                    width: 23.4rem;
 
                     * {
                         flex: 1;
@@ -316,11 +317,16 @@ body {
                         transition: all .15s;
                     }
 
+                    // View
+                    p:nth-child(4) {
+                        margin-right: 3px;
+                    }
+
                     // Recycle Bin Tools
                     p:last-child {
                         position: relative;
                         top: -2px;
-                        flex: 1.65;
+                        flex: 1.625;
                         border: solid 1px transparent;
                         border-top: solid 1px transparent;
                         background:
@@ -334,11 +340,11 @@ body {
                     }
 
                     p:first-child:hover {
-                        background-color: red;
+                        background-color: rgb(197, 48, 48);
                     }
 
                     p:last-child:hover {
-                        border: 1px solid purple;
+                        border: 1px solid rgb(238, 202, 255);
                         border-bottom: solid 1px transparent;
                     }
                 }
@@ -363,8 +369,8 @@ body {
                     }
 
                     i:hover {
-                        border: 1px solid blue;
-                        background-color: lightblue;
+                        border: 1px solid var(--blueborder);
+                        background-color: var(--lightblue);
                     }
 
                     img {
@@ -380,6 +386,7 @@ body {
                 display: flex;
                 margin: .25rem .5rem;
 
+                // Quadruple arrows
                 &-leftbar {
                     flex: 1;
                     display: flex;
@@ -406,8 +413,8 @@ body {
                     }
 
                     p:last-child:hover {
-                        border: 1px solid blue;
-                        background-color: lightblue;
+                        border: 1px solid var(--blueborder);
+                        background-color: var(--lightblue);
                     }
                 }
 
@@ -417,6 +424,7 @@ body {
                     justify-content: space-between;
                     margin-right: .5rem;
                     border: 1px solid var(--grey);
+
 
                     &-left {
                         display: flex;
@@ -437,7 +445,6 @@ body {
                         p {
                             font-size: .75rem;
                             position: relative;
-                            top: -1px;
                         }
 
                         i,
@@ -452,15 +459,14 @@ body {
 
                         i:hover,
                         p:hover {
-                            border: 1px solid blue;
-                            background-color: lightblue;
+                            border: 1px solid var(--blueborder);
+                            background-color: var(--lightblue);
                         }
                     }
 
 
                     &-right {
                         display: flex;
-
 
                         i {
                             flex: 1;
@@ -473,14 +479,15 @@ body {
                             color: grey;
                         }
 
-                        i:hover {
-                            border: 1px solid blue;
-                            background-color: lightblue;
-                        }
-
                         i:last-child {
                             border-left: 1px solid var(--grey);
                         }
+
+                        i:hover {
+                            border: 1px solid var(--blueborder);
+                            background-color: var(--lightblue);
+                        }
+
 
                     }
                 }
@@ -510,7 +517,7 @@ body {
                             border: none;
                             margin: .15rem 0;
                             font-size: .75rem;
-                            padding: .25rem 0 .15rem;
+                            padding: .15rem 0 .15rem;
                         }
 
                         input:focus {
@@ -528,29 +535,28 @@ body {
                         }
 
                         .bin-clear:hover {
-                            background-color: lightblue;
-                            border: 1px solid blue;
+                            background-color: var(--lightblue);
                         }
 
                         .bin-clear.open {
                             display: flex;
                         }
 
+                        // Submit button
                         .bin-button {
-                            background-color: red;
+                            background-color: rgb(197, 48, 48);
                             border: none;
-                            color: white;
-                        }
-
-                        .bin-button:hover {
-                            background-color: lightcoral;
+                            color: rgb(241, 241, 241);
                         }
 
                         .bin-button.open {
                             display: block;
                         }
 
-                        i,
+                        i {
+                            padding: 0 .25rem;
+                        }
+
                         button {
                             padding: 0 .5rem;
                         }
@@ -561,10 +567,118 @@ body {
 
         &-body {
             flex: 5;
+            display: flex;
+
+            &-side {
+                flex: 1.5;
+                border-right: 1px solid rgba(128, 128, 128, 0.082);
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10px;
+                }
+
+                li {
+                    border: 1px solid transparent;
+                    display: flex;
+                    align-items: center;
+                    padding: 2px 10px;
+                    column-gap: 10px;
+
+                    p {
+                        font-size: .8rem;
+                    }
+
+                    i {
+                        color: grey;
+                        font-size: .65rem;
+                    }
+
+                    img {
+                        height: 100%;
+                        width: 14%;
+                        object-fit: contain;
+                    }
+
+                    i:hover {
+                        color: teal;
+                    }
+                }
+
+                li:hover {
+                    background-color: var(--lightblue);
+                }
+            }
+
+            &-main {
+                flex: 5;
+                display: flex;
+                flex-direction: column;
+
+                /* To be implemeneted eventually 8-)
+                &-header {
+                    flex: 1;
+                    display: flex;
+                    background-color: red;
+
+                    * {
+                        flex: 1;
+                    }
+
+                    *:hover {
+                        background: var(--lightblue);
+                    }
+                }
+                */
+
+                &-items {
+                    flex: 5;
+                    margin: auto;
+                    font-size: .77rem;
+                    color: grey;
+
+                    p {
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+
+        &-footer {
+            height: 1.55rem;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 2px;
+
+            &-leftbar {
+                margin-left: 10px;
+                font-size: .77rem;
+                display: flex;
+                align-items: center;
+            }
+
+            &-rightbar {
+                display: flex;
+                justify-content: flex-end;
+
+                img {
+                    box-sizing: content-box;
+                    height: 90%;
+                    width: 37.5%;
+                    padding: 0px 1px;
+                    object-fit: contain;
+                }
+
+                img:first-child {
+                    border: 1px solid var(--blueborder);
+                    background: var(--lightblue);
+                }
+            }
         }
     }
 
-    // Recycle Bin App
+    // Calculator Bin App
     &__calculator {}
 
     // Chrome App
