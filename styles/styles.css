@@ -12,6 +12,7 @@
   text-decoration: none;
   scroll-behavior: smooth;
   list-style: none;
+  --grey: rgba(211, 211, 211, 0.5);
 }
 
 .text-center {
@@ -42,6 +43,10 @@
 }
 
 /* ---- Styles ---- */
+* {
+  cursor: default;
+}
+
 body {
   background-image: url("../images/wallpaper.jpg");
   background-size: cover;
@@ -84,111 +89,368 @@ body {
   padding: 0.1rem 0.15rem 0.45rem 0.15rem;
   object-fit: contain;
 }
-.desktop__calculator {
+.desktop__bin.focus {
+  border: 1px solid red;
+}
+.desktop__bin {
   display: flex;
   flex-direction: column;
   background-color: white;
+  border: 1px solid rgba(128, 128, 128, 0.753);
+  box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.281);
   width: 700px;
   height: 500px;
   position: relative;
   top: 10rem;
   margin: 0 auto;
 }
-.desktop__calculator-header {
+.desktop__bin-header {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
   flex: 1;
 }
-.desktop__calculator-header-first {
+.desktop__bin-header-first.focus {
+  color: white;
+  background-color: darkred;
+}
+.desktop__bin-header-first {
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
-  background-color: darkred;
   flex: 1.25;
 }
-.desktop__calculator-header-first-leftbar {
-  display: flex;
+.desktop__bin-header-first-leftbar {
   align-items: center;
-  background-color: greenyellow;
+  display: flex;
+  column-gap: 0.25rem;
+  padding: 5px;
 }
-.desktop__calculator-header-first-leftbar-bin, .desktop__calculator-header-first-leftbar-paper, .desktop__calculator-header-first-leftbar-folder {
+.desktop__bin-header-first-leftbar-bin, .desktop__bin-header-first-leftbar-paper, .desktop__bin-header-first-leftbar-folder {
   height: 1rem;
   width: 1rem;
 }
-.desktop__calculator-header-first-leftbar-tick {
+.desktop__bin-header-first-leftbar-tick {
   position: absolute;
   height: 0.35rem;
   width: 0.35rem;
-  left: 1.35rem;
+  left: 2.35rem;
 }
-.desktop__calculator-header-first-leftbar-arrow-container {
+.desktop__bin-header-first-leftbar-paper {
+  box-sizing: content-box;
+  border: 1px solid transparent;
+  padding: 3px 0;
+}
+.desktop__bin-header-first-leftbar-paper:hover {
+  border: 1px solid blue;
+  background-color: lightblue;
+}
+.desktop__bin-header-first-leftbar-arrow-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 0.1rem;
+  padding: 0 2px;
+  border: 1px solid transparent;
 }
-.desktop__calculator-header-first-leftbar-arrow-container div:first-child {
+.desktop__bin-header-first-leftbar-arrow-container div:first-child {
   border-bottom: 1px solid black;
   padding: 0.25rem;
 }
-.desktop__calculator-header-first-leftbar-arrow-container div:last-child {
-  border: 0.25rem solid black;
+.desktop__bin-header-first-leftbar-arrow-container div:last-child {
+  border: 3px solid black;
   border-color: black transparent transparent transparent;
+  padding-bottom: 3px;
 }
-.desktop__calculator-header-first-middlebar {
-  background-color: bisque;
+.desktop__bin-header-first-leftbar-arrow-container:hover {
+  border: 1px solid blue;
+  background-color: lightblue;
+}
+.desktop__bin-header-first-leftbar p {
+  position: relative;
+  top: -3px;
+  font-size: 0.75rem;
+  font-weight: lighter;
+}
+.desktop__bin-header-first-middlebar.focus {
+  border-top: 3px solid red;
+}
+.desktop__bin-header-first-middlebar {
   display: flex;
   align-items: stretch;
   font-size: 0.75rem;
   flex: 1;
-  border-top: 4px solid white;
+  border-top: 3px solid white;
 }
-.desktop__calculator-header-first-middlebar p {
+.desktop__bin-header-first-middlebar p {
   display: flex;
   align-items: center;
+}
+.desktop__bin-header-first-middlebar p:first-child {
   padding: 0 2rem;
-}
-.desktop__calculator-header-first-middlebar p:first-child {
   background-color: lavender;
-  margin-left: 5rem;
+  margin-left: 10.5rem;
+  border: 1px solid var(--grey);
 }
-.desktop__calculator-header-first-middlebar p:last-child {
+.desktop__bin-header-first-middlebar .bin-tag:last-child {
   opacity: 0.5;
+  position: relative;
+  top: -3px;
+  margin-left: 1rem;
 }
-.desktop__calculator-header-first-rightbar {
+.desktop__bin-header-first-middlebar .bin-tag.focus {
+  color: white;
+}
+.desktop__bin-header-first-rightbar {
   display: flex;
   align-items: center;
   justify-self: center;
 }
-.desktop__calculator-header-first-rightbar i {
+.desktop__bin-header-first-rightbar i {
   display: flex;
   align-items: center;
   height: 100%;
   width: 100%;
   padding: 0 1rem;
   transition: all 0.2s;
+  color: rgba(65, 65, 65, 0.418);
 }
-.desktop__calculator-header-first-rightbar i:nth-child(2) {
+.desktop__bin-header-first-rightbar i:first-child {
   font-size: 0.75rem;
 }
-.desktop__calculator-header-first-rightbar i:last-child {
-  font-size: 1.1rem;
+.desktop__bin-header-first-rightbar i:nth-child(2) {
+  font-size: 0.65rem;
+  color: rgba(65, 65, 65, 0.664);
 }
-.desktop__calculator-header-first-rightbar i:hover {
+.desktop__bin-header-first-rightbar i:last-child {
+  font-size: 1.05rem;
+}
+.desktop__bin-header-first-rightbar i:hover {
+  color: black;
   background-color: lightcoral;
 }
-.desktop__calculator-header-second {
+.desktop__bin-header-second.focus {
+  border-bottom: 1px solid var(--grey);
+}
+.desktop__bin-header-second {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  border-bottom: 1px solid var(--grey);
+}
+.desktop__bin-header-second-left {
+  display: flex;
+  width: 23.55rem;
+}
+.desktop__bin-header-second-left * {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+.desktop__bin-header-second-left p:first-child {
+  background-color: darkred;
+  color: white;
+  transition: all 0.15s;
+}
+.desktop__bin-header-second-left p:last-child {
+  position: relative;
+  top: -2px;
+  flex: 1.65;
+  border: solid 1px transparent;
+  border-top: solid 1px transparent;
+  background: linear-gradient(white, white) padding-box, linear-gradient(var(--grey), rgb(255, 255, 255)) border-box;
+}
+.desktop__bin-header-second-left *:hover {
+  border-left: 1px solid var(--grey);
+  border-right: 1px solid var(--grey);
+}
+.desktop__bin-header-second-left p:first-child:hover {
   background-color: red;
-  flex: 1;
 }
-.desktop__calculator-header-third {
-  flex: 1;
+.desktop__bin-header-second-left p:last-child:hover {
+  border: 1px solid purple;
+  border-bottom: solid 1px transparent;
 }
-.desktop__calculator-body {
+.desktop__bin-header-second-right {
+  margin-right: 0.15rem;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+}
+.desktop__bin-header-second-right * {
+  padding: 0 0.15rem;
+}
+.desktop__bin-header-second-right i {
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  font-size: 0.6rem;
+  color: grey;
+}
+.desktop__bin-header-second-right i:hover {
+  border: 1px solid blue;
+  background-color: lightblue;
+}
+.desktop__bin-header-second-right img {
+  height: 100%;
+  width: 40%;
+  object-fit: contain;
+}
+.desktop__bin-header-third {
+  display: flex;
+  margin: 0.25rem 0.5rem;
+}
+.desktop__bin-header-third-leftbar {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+}
+.desktop__bin-header-third-leftbar p {
+  font-size: 0.75rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey);
+}
+.desktop__bin-header-third-leftbar p:nth-child(3) {
+  position: relative;
+  top: -0.3rem;
+}
+.desktop__bin-header-third-leftbar p:last-child {
+  color: grey;
+  transition: all 0.35s;
+  border: 1px solid transparent;
+}
+.desktop__bin-header-third-leftbar p:last-child:hover {
+  border: 1px solid blue;
+  background-color: lightblue;
+}
+.desktop__bin-header-third-middlebar {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 0.5rem;
+  border: 1px solid var(--grey);
+}
+.desktop__bin-header-third-middlebar-left {
+  display: flex;
+  align-items: stretch;
+}
+.desktop__bin-header-third-middlebar-left img {
+  object-fit: contain;
+  height: 100%;
+  width: 20%;
+  padding: 0 0.1rem;
+}
+.desktop__bin-header-third-middlebar-left i {
+  color: grey;
+  font-size: 0.5rem;
+}
+.desktop__bin-header-third-middlebar-left p {
+  font-size: 0.75rem;
+  position: relative;
+  top: -1px;
+}
+.desktop__bin-header-third-middlebar-left i,
+.desktop__bin-header-third-middlebar-left p {
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  text-align: center;
+  transition: all 0.35s;
+  padding: 0.15rem;
+}
+.desktop__bin-header-third-middlebar-left i:hover,
+.desktop__bin-header-third-middlebar-left p:hover {
+  border: 1px solid blue;
+  background-color: lightblue;
+}
+.desktop__bin-header-third-middlebar-right {
+  display: flex;
+}
+.desktop__bin-header-third-middlebar-right i {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: all 0.35s;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  color: grey;
+}
+.desktop__bin-header-third-middlebar-right i:hover {
+  border: 1px solid blue;
+  background-color: lightblue;
+}
+.desktop__bin-header-third-middlebar-right i:last-child {
+  border-left: 1px solid var(--grey);
+}
+.desktop__bin-header-third-rightbar {
+  flex: 1;
+  border: 1px solid var(--grey);
+  display: flex;
+  align-items: stretch;
+}
+.desktop__bin-header-third-rightbar .fa-magnifying-glass {
+  display: flex;
+  align-items: center;
+  transform: rotate(90deg);
+  margin: 0.15rem 0;
+  padding: 0 0.5rem;
+  margin-left: 0.25rem;
+  font-size: 0.75rem;
+  color: grey;
+}
+.desktop__bin-header-third-rightbar form {
+  display: flex;
+  align-items: stretch;
+}
+.desktop__bin-header-third-rightbar form input {
+  border: none;
+  margin: 0.15rem 0;
+  font-size: 0.75rem;
+  padding: 0.25rem 0 0.15rem;
+}
+.desktop__bin-header-third-rightbar form input:focus {
+  outline: none;
+}
+.desktop__bin-header-third-rightbar form .bin-clear {
+  border: 1px solid transparent;
+  transition: all 0.35ms;
+  align-items: center;
+  margin: 0.15rem 0;
+  color: grey;
+  display: flex;
+}
+.desktop__bin-header-third-rightbar form .bin-clear:hover {
+  background-color: lightblue;
+  border: 1px solid blue;
+}
+.desktop__bin-header-third-rightbar form .bin-clear.open {
+  display: flex;
+}
+.desktop__bin-header-third-rightbar form .bin-button {
+  background-color: red;
+  border: none;
+  color: white;
+}
+.desktop__bin-header-third-rightbar form .bin-button:hover {
+  background-color: lightcoral;
+}
+.desktop__bin-header-third-rightbar form .bin-button.open {
+  display: block;
+}
+.desktop__bin-header-third-rightbar form i,
+.desktop__bin-header-third-rightbar form button {
+  padding: 0 0.5rem;
+}
+.desktop__bin-body {
   flex: 5;
 }
-
 .taskbar {
   width: 100%;
   height: 4.35%;

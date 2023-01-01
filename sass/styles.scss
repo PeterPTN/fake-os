@@ -12,6 +12,7 @@
     text-decoration: none;
     scroll-behavior: smooth;
     list-style: none;
+    --grey: rgba(211, 211, 211, 0.5);
 }
 
 .text-center {
@@ -42,12 +43,19 @@
 }
 
 /* ---- Styles ---- */
+
+* {
+    cursor: default;
+}
+
 body {
     background-image: url("../images/wallpaper.jpg");
     background-size: cover;
     height: 100vh;
     overflow: hidden;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
 }
 
 .desktop {
@@ -98,11 +106,17 @@ body {
     &__icon-chrome {}
 
 
-    // Calculator App
-    &__calculator {
+    // Bin App
+    &__bin.focus {
+        border: 1px solid red;
+    }
+
+    &__bin {
         display: flex;
         flex-direction: column;
         background-color: white;
+        border: 1px solid rgba(128, 128, 128, 0.753);
+        box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.281);
         width: 700px;
         height: 500px;
         position: relative;
@@ -112,23 +126,27 @@ body {
         &-header {
             display: flex;
             flex-direction: column;
-            border: 1px solid black;
             flex: 1;
+
+            &-first.focus {
+                color: white;
+                background-color: darkred;
+            }
 
             &-first {
                 display: flex;
                 align-items: stretch;
                 justify-content: flex-start;
-                background-color: darkred;
                 flex: 1.25;
 
                 &-leftbar {
-                    display: flex;
                     align-items: center;
-                    background-color: greenyellow;
+                    display: flex;
+                    column-gap: .25rem;
+                    padding: 5px;
 
-
-                    &-bin, 
+                
+                    &-bin,
                     &-paper,
                     &-folder {
                         height: 1rem;
@@ -136,10 +154,22 @@ body {
                     }
 
                     &-tick {
+                     
                         position: absolute;
                         height: .35rem;
                         width: .35rem;
-                        left: 1.35rem;
+                        left: 2.35rem;
+                    }
+
+                    &-paper {
+                        box-sizing: content-box;
+                        border: 1px solid transparent;
+                        padding: 3px 0;
+                    }
+
+                    &-paper:hover {
+                        border: 1px solid blue;
+                        background-color: lightblue;
                     }
 
                     &-arrow-container {
@@ -147,41 +177,70 @@ body {
                         flex-direction: column;
                         align-items: center;
                         row-gap: .1rem;
+                        padding: 0 2px;
+                        border: 1px solid transparent;
 
-                        div:first-child{
+                        div:first-child {
                             border-bottom: 1px solid black;
                             padding: .25rem;
                         }
 
                         div:last-child {
-                            border: .25rem solid black;
+                            border: 3px solid black;
                             border-color: black transparent transparent transparent;
+                            padding-bottom: 3px;
                         }
+                    }
+
+                    &-arrow-container:hover {
+                        border: 1px solid blue;
+                        background-color: lightblue;
+                    }
+
+                    p {
+                        position: relative;
+                        top: -3px;
+                        font-size: .75rem;
+                        font-weight: lighter;
                     }
                 }
 
+                &-middlebar.focus {
+                    border-top: 3px solid red;
+                  
+                }
+
                 &-middlebar {
-                    background-color: bisque;
                     display: flex;
                     align-items: stretch;
                     font-size: .75rem;
                     flex: 1;
-                    border-top: 4px solid white;
+                    border-top: 3px solid white;
 
                     p {
                         display: flex;
                         align-items: center;
-                        padding: 0 2rem;
+                        ;
                     }
 
                     // Manage
                     p:first-child {
+                        padding: 0 2rem;
                         background-color: lavender;
-                        margin-left: 5rem;
+                        margin-left: 10.5rem;
+                        border: 1px solid var(--grey);
                     }
 
-                    p:last-child {
+                    // Recycline Bin
+                    .bin-tag:last-child {
                         opacity: .5;
+                        position: relative;
+                        top: -3px;
+                        margin-left: 1rem;
+                    }
+
+                    .bin-tag.focus {
+                        color: white;
                     }
 
                 }
@@ -198,34 +257,305 @@ body {
                         width: 100%;
                         padding: 0 1rem;
                         transition: all .2s;
+                        color: rgba(65, 65, 65, 0.418);
+                       
                     }
 
                     // Dash
-                    i:first-child {}
-
-                    // Square
-                    i:nth-child(2) {
+                    i:first-child {
                         font-size: .75rem;
                     }
 
+                    // Square
+                    i:nth-child(2) {
+                        font-size: .65rem;
+                        color: rgba(65, 65, 65, 0.664);
+                    }
+
+                    // Cross
                     i:last-child {
-                        font-size: 1.1rem;
+                        font-size: 1.05rem;
                     }
 
                     i:hover {
+                        color: black;
                         background-color: lightcoral;
                     }
                 }
             }
 
             // Second bar
-            &-second {
-                background-color: red;
-                flex: 1;
+            &-second.focus {
+                border-bottom: 1px solid var(--grey);
             }
 
+            &-second {
+                display: flex;
+                justify-content: space-between;
+                font-size: .75rem;
+                border-bottom: 1px solid var(--grey);
+
+                &-left {
+                    display: flex;
+                    width: 23.55rem;
+
+                    * {
+                        flex: 1;
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid transparent;
+                        transition: all .15s;
+                    }
+
+                    // File
+                    p:first-child {
+                        background-color: darkred;
+                        color: white;
+                        transition: all .15s;
+                    }
+
+                    // Recycle Bin Tools
+                    p:last-child {
+                        position: relative;
+                        top: -2px;
+                        flex: 1.65;
+                        border: solid 1px transparent;
+                        border-top: solid 1px transparent;
+                        background:
+                            linear-gradient(white, white) padding-box,
+                            linear-gradient(var(--grey), rgb(255, 255, 255)) border-box;
+                    }
+
+                    *:hover {
+                        border-left: 1px solid var(--grey);
+                        border-right: 1px solid var(--grey);
+                    }
+
+                    p:first-child:hover {
+                        background-color: red;
+                    }
+
+                    p:last-child:hover {
+                        border: 1px solid purple;
+                        border-bottom: solid 1px transparent;
+                    }
+                }
+
+                &-right {
+                    margin-right: .15rem;
+                    display: flex;
+                    align-items: stretch;
+                    justify-content: flex-end;
+
+
+                    * {
+                        padding: 0 .15rem;
+                    }
+
+                    i {
+                        display: flex;
+                        align-items: center;
+                        border: 1px solid transparent;
+                        font-size: .6rem;
+                        color: grey;
+                    }
+
+                    i:hover {
+                        border: 1px solid blue;
+                        background-color: lightblue;
+                    }
+
+                    img {
+                        height: 100%;
+                        width: 40%;
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            // Third bar
             &-third {
-                flex: 1;
+                display: flex;
+                margin: .25rem .5rem;
+
+                &-leftbar {
+                    flex: 1;
+                    display: flex;
+                    align-items: stretch;
+
+                    p {
+                        font-size: .75rem;
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: var(--grey);
+                    }
+
+                    p:nth-child(3) {
+                        position: relative;
+                        top: -.3rem;
+                    }
+
+                    p:last-child {
+                        color: grey;
+                        transition: all .35s;
+                        border: 1px solid transparent;
+                    }
+
+                    p:last-child:hover {
+                        border: 1px solid blue;
+                        background-color: lightblue;
+                    }
+                }
+
+                &-middlebar {
+                    flex: 3;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-right: .5rem;
+                    border: 1px solid var(--grey);
+
+                    &-left {
+                        display: flex;
+                        align-items: stretch;
+
+                        img {
+                            object-fit: contain;
+                            height: 100%;
+                            width: 20%;
+                            padding: 0 .1rem;
+                        }
+
+                        i {
+                            color: grey;
+                            font-size: .5rem;
+                        }
+
+                        p {
+                            font-size: .75rem;
+                            position: relative;
+                            top: -1px;
+                        }
+
+                        i,
+                        p {
+                            display: flex;
+                            align-items: center;
+                            border: 1px solid transparent;
+                            text-align: center;
+                            transition: all .35s;
+                            padding: .15rem;
+                        }
+
+                        i:hover,
+                        p:hover {
+                            border: 1px solid blue;
+                            background-color: lightblue;
+                        }
+                    }
+
+
+                    &-right {
+                        display: flex;
+
+
+                        i {
+                            flex: 1;
+                            display: flex;
+                            align-items: center;
+                            border: 1px solid transparent;
+                            transition: all .35s;
+                            padding: 0 .5rem;
+                            font-size: .75rem;
+                            color: grey;
+                        }
+
+                        i:hover {
+                            border: 1px solid blue;
+                            background-color: lightblue;
+                        }
+
+                        i:last-child {
+                            border-left: 1px solid var(--grey);
+                        }
+
+                    }
+                }
+
+                &-rightbar {
+                    flex: 1;
+                    border: 1px solid var(--grey);
+                    display: flex;
+                    align-items: stretch;
+
+                    .fa-magnifying-glass {
+                        display: flex;
+                        align-items: center;
+                        transform: rotate(90deg);
+                        margin: .15rem 0;
+                        padding: 0 .5rem;
+                        margin-left: .25rem;
+                        font-size: .75rem;
+                        color: grey;
+                    }
+
+                    form {
+                        display: flex;
+                        align-items: stretch;
+
+                        input {
+                            border: none;
+                            margin: .15rem 0;
+                            font-size: .75rem;
+                            padding: .25rem 0 .15rem;
+                        }
+
+                        input:focus {
+                            outline: none;
+                        }
+
+                        .bin-clear {
+                            border: 1px solid transparent;
+                            transition: all .35ms;
+                            align-items: center;
+                            margin: .15rem 0;
+                            color: grey;
+                            display: flex;
+                            // display: none;
+                        }
+
+                        .bin-clear:hover {
+                            background-color: lightblue;
+                            border: 1px solid blue;
+                        }
+
+                        .bin-clear.open {
+                            display: flex;
+                        }
+
+                        .bin-button {
+                            background-color: red;
+                            border: none;
+                            color: white;
+                        }
+
+                        .bin-button:hover {
+                            background-color: lightcoral;
+                        }
+
+                        .bin-button.open {
+                            display: block;
+                        }
+
+                        i,
+                        button {
+                            padding: 0 .5rem;
+                        }
+                    }
+                }
             }
         }
 
@@ -235,9 +565,10 @@ body {
     }
 
     // Recycle Bin App
-
+    &__calculator {}
 
     // Chrome App
+    &__chrome {}
 }
 
 .taskbar {

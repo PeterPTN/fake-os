@@ -30,48 +30,89 @@
             </div>
         </div>
 
-        <div class="desktop__calculator">
-            <header class="desktop__calculator-header">
-                <div class="desktop__calculator-header-first">
-                    <div class="desktop__calculator-header-first-leftbar">
-                        <img class="desktop__calculator-header-first-leftbar-bin" src="./images/2DBin.png" />
-                        <img class="desktop__calculator-header-first-leftbar-tick" src="./images/redtick.png" />
-                        <img class="desktop__calculator-header-first-leftbar-paper" src="./images/paper1.png" />
-                        <img class="desktop__calculator-header-first-leftbar-folder" src="./images/closedFolder.png" />
-                        <div class="desktop__calculator-header-first-leftbar-arrow-container">
-                            <div class=""></div>
-                            <div class=""></div>
+
+        <div class="desktop__bin">
+            <header class="desktop__bin-header">
+                <div class="desktop__bin-header-first">
+                    <div class="desktop__bin-header-first-leftbar">
+                        <img class="desktop__bin-header-first-leftbar-bin" src="./images/2DBin.png" />
+                        <p>|</p>
+                        <img class="desktop__bin-header-first-leftbar-tick" src="./images/redtick.png" />
+                        <img class="desktop__bin-header-first-leftbar-paper" src="./images/paper1.png" />
+                        <img class="desktop__bin-header-first-leftbar-folder" src="./images/closedFolder.png" />
+                        <div class="desktop__bin-header-first-leftbar-arrow-container">
+                            <div></div>
+                            <div></div>
                         </div>
                         <p>|</p>
                     </div>
 
-                    <div class="desktop__calculator-header-first-middlebar">
+                    <div class="desktop__bin-header-first-middlebar">
                         <p>Manage</p>
-                        <p>Recycle Bin</p>
+                        <p class="bin-tag">Recycle Bin</p>
                     </div>
 
-                    <div class="desktop__calculator-header-first-rightbar">
+                    <div class="desktop__bin-header-first-rightbar">
                         <i class="fa-solid fa-minus"></i>
                         <i class="fa-regular fa-square-full"></i>
                         <i class="fa-solid fa-xmark"></i>
                     </div>
                 </div>
 
-                <div class="desktop__calculator-header-second">
-                    <p>File</p>
-                    <p>Home</p>
-                    <p>Share</p>
-                    <p>View</p>
-                    <p>Recycle Bin Tools</p>
+                <div class="desktop__bin-header-second">
+                    <div class="desktop__bin-header-second-left">
+                        <p>File</p>
+                        <p>Home</p>
+                        <p>Share</p>
+                        <p>View</p>
+                        <p>Recycle Bin Tools</p>
+                    </div>
+
+                    <div class="desktop__bin-header-second-right">
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <img src="./images/help.png" />
+                    </div>
                 </div>
 
-                <div class="desktop__calculator-header-third">
+                <div class="desktop__bin-header-third">
+                    <div class="desktop__bin-header-third-leftbar">
+                        <p>&#129128;</p>
+                        <p>&#129130;</p>
+                        <p>&#8964;</p>
+                        <p>&#129129;</p>
 
+                    </div>
+
+                    <div class="desktop__bin-header-third-middlebar">
+                        <div class="desktop__bin-header-third-middlebar-left">
+                            <img src="./images/2DBin.png" />
+                            <i class="fa-solid fa-chevron-right"></i>
+                            <p>Recycle Bin</p>
+                        </div>
+
+                        <div class="desktop__bin-header-third-middlebar-right">
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <i class="fa-solid fa-arrow-rotate-right"></i>
+                        </div>
+                    </div>
+
+                    <div class="desktop__bin-header-third-rightbar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <form>
+                            <!-- Length > 0 open icons -->
+                            <input type="text" placeholder="Search Recycle Bin">
+                            <i class="fa-solid fa-xmark bin-clear"></i>
+                            <button class="bin-button">
+                                &#129130;
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </header>
 
-            <section class="desktop__calculator-body">
-                <div class="desktop__calculator-body-side">
+            <section class="desktop__bin-body">
+                <div class="desktop__bin-body-side">
                     <ul>
                         <li><img src="" />
                             <p></p>
@@ -85,15 +126,25 @@
                     </ul>
                 </div>
 
-                <div class="desktop__calculator-body-main">
+                <div class="desktop__bin-body-main">
                     <p>This folder is empty.</p>
                 </div>
             </section>
+
+            <footer class="desktop__bin-header-fourth">
+                <div class="desktop__bin-header-fourth-leftbar">
+                    <p>1 items</p>
+                </div>
+
+                <div class="desktop__bin-header-fourth-rightbar">
+
+                </div>
+            </footer>
         </div>
 
-        <div class="desktop__bin"></div>
-        <div class="desktop__chrome"></div>
+        <div class="desktop__calculator"></div>
 
+        <div class="desktop__chrome"></div>
 
     </div>
 
@@ -132,5 +183,7 @@
 
     </div>
 </body>
+
+<script src="./scripts/scripts.js"></script>
 
 </html>
