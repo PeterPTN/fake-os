@@ -14,16 +14,19 @@
 <body>
     <div class="desktop">
         <div class="desktop__icon">
+            <!-- Add Focus -->
             <div class="desktop__icon-bin desktop--icon">
                 <img src="./images/fullBin.png" />
                 <p>Recycle Bin</p>
             </div>
 
+            <!-- Add Focus -->
             <div class="desktop__icon-calculator desktop--icon">
                 <img src="./images/calculator.png" />
                 <p>Calculator</p>
             </div>
 
+            <!-- Add Focus -->
             <div class="desktop__icon-chrome desktop--icon">
                 <img src="./images/chrome.png" />
                 <p>Chrome</p>
@@ -135,6 +138,7 @@
                 </div>
 
                 <div class="desktop__bin-body-main">
+                    <!-- To be added eventually? -->
                     <!--  
                     <div class="desktop__bin-body-main-header">
                         <p>Name</p>
@@ -146,9 +150,18 @@
                     </div>
                      -->
 
-
                     <div class="desktop__bin-body-main-items">
-                        <p>This folder is empty.</p>
+                        <!-- Add Focus -->
+                        <div class="desktop__bin-body-main-items-one">
+                            <img src="./images/word.png" />
+                            <p>Chapter Summary.docx</p>
+                        </div>
+
+                        <!-- Add Focus -->
+                        <div class="desktop__bin-body-main-items-two">
+                            <img src="./images/word.png" />
+                            <p>Insurance.docx</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -165,7 +178,82 @@
             </footer>
         </div>
 
-        <div class="desktop__calculator"></div>
+        <!-- Calculator -->
+        <section class="desktop__calculator">
+            <header class="desktop__calculator-header">
+                <div class="desktop__calculator-header-first">
+                    <div class="desktop__calculator-header-first-leftbar">
+                        <img src="./images/calculator.png" alt="">
+                        <p>Calculator</p>
+                    </div>
+
+                    <div class="desktop__calculator-header-first-rightbar">
+                        <i class="fa-solid fa-minus"></i>
+                        <i class="fa-regular fa-square-full"></i>
+                        <p>&#10005;</p>
+                    </div>
+                </div>
+
+                <div class="desktop__calculator-header-second">
+                    <div class="desktop__calculator-header-second-leftbar">
+                        <img src="./images/hamburger.png" alt="">
+                        <p>Standard</p>
+                        <img src="./images/expand.svg" alt="">
+                    </div>
+
+                    <div class="desktop__calculator-header-second-rightbar">
+                        <img src="./images/history.png" alt="">
+                    </div>
+                </div>
+            </header>
+
+            <main class="desktop__calculator-main">
+                <div class="desktop__calculator-main-display">
+                    <p class="desktop__calculator-main-display-value">0</p>
+                </div>
+
+                <div class="desktop__calculator-main-memory">
+                    <p class="desktop__calculator-main-memory-greyout">MC</p>
+                    <p class="desktop__calculator-main-memory-greyout">MR</p>
+                    <p>M+</p>
+                    <p>M-</p>
+                    <p>MS</p>
+                    <p class="desktop__calculator-main-memory-greyout">M&#8964;</p>
+                </div>
+
+                <div class="desktop__calculator-main-keys">
+                    <button class="desktop__calculator-main-keys-greyout">%</button>
+                    <button class="desktop__calculator-main-keys-greyout">CE</button>
+                    <button class="desktop__calculator-main-keys-greyout">C</button>
+                    <button class="desktop__calculator-main-keys-greyout"><img src="./images/erase.png" alt="Erase button"></button>
+
+                    <button class="desktop__calculator-main-keys-greyout">&#8543;&#119909;</button>
+                    <button class="desktop__calculator-main-keys-greyout">&#119909;&#178;</button>
+                    <button class="desktop__calculator-main-keys-greyout">&#178;&#8730;&#119909;</button>
+                    <button class="desktop__calculator-main-keys-greyout divide">&#xF7;</button>
+
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button class="desktop__calculator-main-keys-greyout">&#10005;</button>
+
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button class="desktop__calculator-main-keys-greyout ">&#8722;</button>
+
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button class="desktop__calculator-main-keys-greyout">&#43;</button>
+
+                    <button>&#xb1;</button>
+                    <button>0</button>
+                    <button>.</button>
+                    <button>=</button>
+                </div>
+            </main>
+        </section>
 
         <div class="desktop__chrome"></div>
 
@@ -192,8 +280,6 @@
                 <div class="taskbar__left-active-calculator taskbar--icon">
                     <img src="./images/calculator.png" />
                 </div>
-
-
             </div>
         </div>
 
@@ -203,7 +289,6 @@
                 <p>19/12/2022</p>
             </div>
         </div>
-
     </div>
 </body>
 

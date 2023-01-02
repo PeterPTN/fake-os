@@ -13,7 +13,8 @@
   scroll-behavior: smooth;
   list-style: none;
   --grey: rgba(211, 211, 211, 0.5);
-  --lightblue: rgba(200, 228, 238, 0.315);
+  --activeblue: rgba(194, 223, 250, 0.938);
+  --lightblue: rgba(200, 223, 238, 0.486);
   --blueborder: rgba(124, 193, 240, 0.726);
 }
 
@@ -70,8 +71,11 @@ body {
   width: 4vw;
 }
 .desktop--icon:hover {
-  border: 1px solid rgb(150, 196, 211);
-  background-color: rgba(224, 232, 235, 0.116);
+  border: 1px solid rgb(150, 176, 211);
+  background-color: rgba(196, 229, 241, 0.39);
+}
+.desktop--icon.focus {
+  background-color: rgba(147, 208, 248, 0.548);
 }
 .desktop__icon {
   display: flex;
@@ -105,6 +109,7 @@ body {
   position: relative;
   top: 10rem;
   margin: 0 auto;
+  display: none;
 }
 .desktop__bin-header {
   display: flex;
@@ -415,7 +420,7 @@ body {
 .desktop__bin-header-third-rightbar form input {
   border: none;
   margin: 0.15rem 0;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   padding: 0.15rem 0 0.15rem;
 }
 .desktop__bin-header-third-rightbar form input:focus {
@@ -509,12 +514,34 @@ body {
 }
 .desktop__bin-body-main-items {
   flex: 5;
-  margin: auto;
+  display: flex;
   font-size: 0.77rem;
-  color: grey;
+  gap: 1rem;
+  margin: 0.75rem;
 }
-.desktop__bin-body-main-items p {
-  margin-top: 1rem;
+.desktop__bin-body-main-items div {
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  width: 5rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid transparent;
+}
+.desktop__bin-body-main-items div img {
+  width: 5rem;
+  object-fit: contain;
+}
+.desktop__bin-body-main-items div p {
+  text-align: center;
+}
+.desktop__bin-body-main-items div:hover {
+  background-color: var(--lightblue);
+}
+.desktop__bin-body-main-items-one.focus, .desktop__bin-body-main-items-two.focus {
+  background-color: var(--activeblue);
+  border: 1px solid var(--blueborder);
 }
 .desktop__bin-footer {
   height: 1.55rem;
@@ -542,6 +569,129 @@ body {
 .desktop__bin-footer-rightbar img:first-child {
   border: 1px solid var(--blueborder);
   background: var(--lightblue);
+}
+.desktop__calculator.focus {
+  border: 1px solid red;
+}
+.desktop__calculator {
+  background-color: rgb(245, 245, 245);
+  height: fit-content;
+  border: 1px solid rgba(128, 128, 128, 0.637);
+  box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.363);
+}
+.desktop__calculator-header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+.desktop__calculator-header-first {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1.1rem;
+}
+.desktop__calculator-header-first-leftbar {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+.desktop__calculator-header-first-leftbar img {
+  object-fit: contain;
+  height: 1rem;
+}
+.desktop__calculator-header-first-leftbar p {
+  font-size: 0.8rem;
+}
+.desktop__calculator-header-first-rightbar {
+  display: flex;
+  align-items: center;
+  color: rgba(85, 85, 85, 0.719);
+  column-gap: 1.5rem;
+}
+.desktop__calculator-header-first-rightbar i:first-child {
+  font-size: 0.8rem;
+}
+.desktop__calculator-header-first-rightbar i:nth-child(2) {
+  font-size: 0.65rem;
+}
+.desktop__calculator-header-first-rightbar i:last-child {
+  font-size: 1rem;
+}
+.desktop__calculator-header-second {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.2rem 0 1rem;
+}
+.desktop__calculator-header-second img {
+  height: 1rem;
+}
+.desktop__calculator-header-second-leftbar {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+.desktop__calculator-header-second-leftbar p {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.desktop__calculator-header-second-rightbar {
+  display: flex;
+}
+.desktop__calculator-main-display {
+  height: 6rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 1rem 1rem;
+}
+.desktop__calculator-main-display p {
+  font-size: 3rem;
+}
+.desktop__calculator-main-memory {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 0.85rem;
+}
+.desktop__calculator-main-memory img {
+  height: 0.5rem;
+  color: grey;
+}
+.desktop__calculator-main-memory-greyout {
+  color: rgba(128, 128, 128, 0.479);
+}
+.desktop__calculator-main-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 3px;
+  padding: 5px;
+}
+.desktop__calculator-main-keys img {
+  height: 0.9rem;
+  box-sizing: content-box;
+}
+.desktop__calculator-main-keys button {
+  font-size: 1.05rem;
+  height: 3.25rem;
+  width: 5rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  background-color: white;
+  border: 1px solid rgba(167, 167, 167, 0.301);
+}
+.desktop__calculator-main-keys button:last-child {
+  color: white;
+  background-color: darkred;
+}
+.desktop__calculator-main-keys > .desktop__calculator-main-keys-greyout {
+  background-color: rgb(248, 248, 250);
+}
+.desktop__calculator-main-keys-greyout.divide {
+  font-size: 1.2rem;
+  color: rgb(65, 65, 65);
+}
+.desktop__calculator-main-keys button:hover {
+  filter: brightness(0.99);
 }
 .taskbar {
   width: 100%;

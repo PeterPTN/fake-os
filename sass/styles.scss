@@ -13,7 +13,8 @@
     scroll-behavior: smooth;
     list-style: none;
     --grey: rgba(211, 211, 211, 0.5);
-    --lightblue: rgba(200, 228, 238, 0.315);
+    --activeblue: rgba(194, 223, 250, 0.938);
+    --lightblue: rgba(200, 223, 238, 0.486);
     --blueborder: rgba(124, 193, 240, 0.726);
 }
 
@@ -74,8 +75,12 @@ body {
     }
 
     &--icon:hover {
-        border: 1px solid rgb(150, 196, 211);
-        background-color: rgba(224, 232, 235, 0.116);
+        border: 1px solid rgb(150, 176, 211);
+        background-color: rgba(196, 229, 241, 0.39);
+    }
+
+    &--icon.focus {
+        background-color: rgba(147, 208, 248, 0.548);
     }
 
     &__icon {
@@ -124,6 +129,9 @@ body {
         position: relative;
         top: 10rem;
         margin: 0 auto;
+
+        // Debugging
+        display: none;
 
         &-header {
             display: flex;
@@ -513,10 +521,11 @@ body {
                         display: flex;
                         align-items: stretch;
 
+                        // Searchbar
                         input {
                             border: none;
                             margin: .15rem 0;
-                            font-size: .75rem;
+                            font-size: .72rem;
                             padding: .15rem 0 .15rem;
                         }
 
@@ -634,12 +643,41 @@ body {
 
                 &-items {
                     flex: 5;
-                    margin: auto;
+                    display: flex;
                     font-size: .77rem;
-                    color: grey;
+                    gap: 1rem;
+                    margin: .75rem;
 
-                    p {
-                        margin-top: 1rem;
+                    div {
+                        box-sizing: content-box;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        height: fit-content;
+                        width: 5rem;
+                        padding: .35rem .6rem;
+                        border: 1px solid transparent;
+
+                        img {
+                            width: 5rem;
+                            object-fit: contain;
+                        }
+
+                        p {
+                            text-align: center;
+
+                        }
+                    }
+
+                    div:hover {
+                        background-color: var(--lightblue);
+                    }
+
+                    &-one.focus,
+                    &-two.focus {
+                        background-color: var(--activeblue);
+                        border: 1px solid var(--blueborder);
+
                     }
                 }
             }
@@ -679,7 +717,163 @@ body {
     }
 
     // Calculator Bin App
-    &__calculator {}
+    &__calculator.focus {
+        border: 1px solid red;
+    }
+
+    &__calculator {
+        background-color: rgb(245, 245, 245);
+        height: fit-content;
+        border: 1px solid rgba(128, 128, 128, 0.637);
+        box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.363);
+
+        &-header {
+            display: flex;
+            flex-direction: column;
+            row-gap: .5rem;
+
+            &-first {
+                display: flex;
+                justify-content: space-between;
+                padding: .5rem 1.1rem;
+
+                &-leftbar {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1rem;
+
+                    img {
+                        object-fit: contain;
+                        height: 1rem;
+                    }
+
+                    p {
+                        font-size: .8rem;
+                    }
+                }
+
+                &-rightbar {
+                    display: flex;
+                    align-items: center;
+                    color: rgba(85, 85, 85, 0.719);
+                    column-gap: 1.5rem;
+
+                    i:first-child {
+                        font-size: .8rem;
+                    }
+
+                    i:nth-child(2) {
+                        font-size: .65rem;
+                    }
+
+                    i:last-child {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            &-second {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 1.2rem 0 1rem;
+
+                img {
+                    height: 1rem;
+                }
+
+                &-leftbar {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1rem;
+
+
+                    // Standard
+                    p {
+                        font-weight: bold;
+                        font-size: 1.25rem;
+                    }
+                }
+               
+                &-rightbar {
+                    display: flex;
+                }
+            }
+        }
+
+        &-main {
+
+            &-display {
+                height: 6rem;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                padding: 1rem 1rem;
+
+                p {
+                    font-size: 3rem;
+                }
+            }
+
+            &-memory {
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                font-size: .85rem;
+
+                img {
+                    height: .5rem;
+                    color: grey;
+                }
+
+
+                &-greyout {
+                    color: rgba(128, 128, 128, 0.479);
+                }
+            }
+
+            &-keys {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                align-items: center;
+                gap: 3px;
+                padding: 5px;
+
+               
+
+                img {
+                    height: .9rem;   
+                    box-sizing: content-box;
+                }
+
+                button {
+                    font-size: 1.05rem;
+                    height: 3.25rem;
+                    width: 5rem;
+                    text-align: center;
+                    border-radius: .25rem;
+                    background-color: white;
+                    border: 1px solid rgba(167, 167, 167, 0.301);
+                }
+
+                button:last-child {
+                    color: white;
+                    background-color: darkred;
+                }
+
+                &>&-greyout {
+                    background-color: rgb(248, 248, 250);
+                }
+                &-greyout.divide {
+                    font-size: 1.2rem;
+                    color: rgb(65, 65, 65);
+                }
+
+                button:hover {
+                    filter: brightness(.99);
+                }
+            }
+        }
+    }
 
     // Chrome App
     &__chrome {}
