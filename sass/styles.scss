@@ -735,7 +735,7 @@ body {
             &-first {
                 display: flex;
                 justify-content: space-between;
-                padding: .5rem 1.1rem;
+                padding: 0 0 0 1.1rem;
 
                 &-leftbar {
                     display: flex;
@@ -754,9 +754,14 @@ body {
 
                 &-rightbar {
                     display: flex;
-                    align-items: center;
+                    align-items: stretch;
                     color: rgba(85, 85, 85, 0.719);
-                    column-gap: 1.5rem;
+                  
+                    i,p {
+                        padding: .4rem 1rem;
+                        display: flex;
+                        align-items: center;
+                    }
 
                     i:first-child {
                         font-size: .8rem;
@@ -768,6 +773,15 @@ body {
 
                     i:last-child {
                         font-size: 1rem;
+                    }
+
+                    i:hover {
+                        background-color: rgb(211, 211, 211);
+                    }
+
+                    p:hover {
+                        background-color: rgb(224, 0, 0);
+                        color: white;
                     }
                 }
             }
@@ -848,7 +862,7 @@ body {
                 button {
                     font-size: 1.05rem;
                     height: 3.25rem;
-                    width: 5rem;
+                    width: 4.7rem;
                     text-align: center;
                     border-radius: .25rem;
                     background-color: white;
