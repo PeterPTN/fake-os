@@ -578,6 +578,10 @@ body {
   height: fit-content;
   border: 1px solid rgba(128, 128, 128, 0.637);
   box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.363);
+  position: absolute;
+  left: 20%;
+  top: 15%;
+  display: none;
 }
 .desktop__calculator-header {
   display: flex;
@@ -727,6 +731,211 @@ body {
 .desktop__calculator-main-keys button:last-child:hover {
   background-color: rgb(168, 69, 69);
 }
+.desktop__chrome {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+.desktop__chrome-header {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(202, 109, 109);
+  padding: 0.75rem 0 0 0;
+}
+.desktop__chrome-header-first {
+  color: white;
+}
+.desktop__chrome-header-first-leftbar {
+  display: flex;
+  position: relative;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.desktop__chrome-header-first-leftbar-start {
+  position: relative;
+  background-color: green;
+  height: 2.15rem;
+  width: 0.5rem;
+  z-index: 0;
+}
+.desktop__chrome-header-first-leftbar-start.copy {
+  position: absolute;
+  background-color: rgb(202, 109, 109);
+  border-bottom-right-radius: 35rem;
+  z-index: 2;
+}
+.desktop__chrome-header-first-leftbar-end {
+  position: relative;
+  background-color: green;
+  border-bottom-left-radius: 0;
+  height: 2.15rem;
+  width: 0.5rem;
+  z-index: 0;
+}
+.desktop__chrome-header-first-leftbar-end.copy {
+  position: absolute;
+  background-color: rgb(202, 109, 109);
+  border-bottom-left-radius: 0.35rem;
+  z-index: 2;
+}
+.desktop__chrome-header-first-leftbar-tab {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: green;
+  column-gap: 0.5rem;
+  width: 15rem;
+  padding: 0 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  font-size: 0.75rem;
+}
+.desktop__chrome-header-first-leftbar-tab img {
+  height: 1rem;
+}
+.desktop__chrome-header-first-leftbar-tab p:last-child {
+  flex: 1;
+  text-align: right;
+}
+.desktop__chrome-header-first-leftbar-newtab {
+  font-size: 1.2rem;
+  align-self: flex-end;
+  margin-bottom: 3.5px;
+}
+.desktop__chrome-header-first-leftbar-newtab p {
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+  background-color: red;
+  border-radius: 100%;
+  padding: 0 0.425rem 3px;
+}
+.desktop__chrome-header-second {
+  display: flex;
+  background-color: green;
+}
+.desktop__chrome-header-second-leftbar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.desktop__chrome-header-second-centerbar {
+  flex: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.desktop__chrome-header-second-centerbar div {
+  display: flex;
+  align-items: center;
+}
+.desktop__chrome-header-second-rightbar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.desktop__chrome-header-second-rightbar p {
+  border-radius: 100%;
+  padding: 0 0.45rem 3px;
+}
+.desktop__chrome-main {
+  display: flex;
+  flex-direction: column;
+  height: 87%;
+}
+.desktop__chrome-main-header {
+  display: flex;
+  font-size: 0.9rem;
+  letter-spacing: -0.5px;
+  margin: 1rem;
+}
+.desktop__chrome-main-header p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.desktop__chrome-main-header-leftbar {
+  flex: 1;
+  display: flex;
+  column-gap: 1rem;
+}
+.desktop__chrome-main-header-rightbar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 1rem;
+}
+.desktop__chrome-main-header-rightbar p:last-child {
+  background-color: palevioletred;
+  border-radius: 100%;
+  padding: 0.25rem 0.675rem 5px 0.65rem;
+  color: white;
+}
+.desktop__chrome-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto 0;
+}
+.desktop__chrome-main-content-google {
+  display: flex;
+  font-size: 2.75rem;
+  font-weight: lighter;
+  font-family: "Poppins", sans-serif;
+  align-items: center;
+}
+.desktop__chrome-main-content-google h1:nth-child(1) {
+  position: relative;
+  bottom: 0.35rem;
+  color: #4285F4;
+  font-size: 5.5rem;
+}
+.desktop__chrome-main-content-google h1:nth-child(2) {
+  color: #EA4335;
+}
+.desktop__chrome-main-content-google h1:nth-child(3) {
+  color: #FBBC05;
+}
+.desktop__chrome-main-content-google h1:nth-child(4) {
+  color: #4285F4;
+}
+.desktop__chrome-main-content-google h1:nth-child(5) {
+  color: #34A853;
+}
+.desktop__chrome-main-content-google h1:nth-child(6) {
+  color: #EA4335;
+}
+.desktop__chrome-main-content-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.desktop__chrome-main-content-form-buttons {
+  display: flex;
+}
+.desktop__chrome-main-footer {
+  margin-top: auto;
+}
+.desktop__chrome-main-footer-first {
+  display: flex;
+}
+.desktop__chrome-main-footer-second {
+  display: flex;
+}
+.desktop__chrome-main-footer-second p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.desktop__chrome-main-footer-second-leftbar {
+  flex: 1;
+  display: flex;
+}
+.desktop__chrome-main-footer-second-rightbar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .taskbar {
   width: 100%;
   height: 4.35%;
