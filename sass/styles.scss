@@ -933,8 +933,8 @@ body {
         &-header {
             display: flex;
             flex-direction: column;
-            background-color: rgb(202, 109, 109);
-            padding: .75rem 0 0 0;
+            background-color: black;
+            padding: .2rem 0 0 0;
 
             &-first {
                 color: white;
@@ -948,7 +948,7 @@ body {
                     // Styling thing before tab
                     &-start {
                         position: relative;
-                        background-color: green;
+                        background-color: rgb(48, 44, 44);
                         height: 2.15rem;
                         width: .5rem;
                         z-index: 0;
@@ -956,14 +956,14 @@ body {
 
                     &-start.copy {
                         position: absolute;
-                        background-color: rgb(202, 109, 109);
+                        background-color: black;
                         border-bottom-right-radius: 35rem;
                         z-index: 2;
                     }
 
                     &-end {
                         position: relative;
-                        background-color: green;
+                        background-color: rgb(48, 44, 44);
                         border-bottom-left-radius: 0;
                         height: 2.15rem;
                         width: .5rem;
@@ -972,16 +972,17 @@ body {
 
                     &-end.copy {
                         position: absolute;
-                        background-color: rgb(202, 109, 109);
+                        background-color: black;
                         border-bottom-left-radius: .35rem;
                         z-index: 2;
                     }
 
+                    // Tab
                     &-tab {
                         display: flex;
                         align-items: center;
                         justify-content: flex-start;
-                        background-color: green;
+                        background-color: rgb(48, 44, 44);
                         column-gap: .5rem;
                         width: 15rem;
                         padding: 0 .5rem;
@@ -994,9 +995,13 @@ body {
                         }
 
                         p:last-child {
-                            flex: 1;
-                            text-align: right;
+                            margin-left: auto;
+                            border-radius: 100%;
+                            padding: 0 1.75px;
+                        }
 
+                        P:last-child:hover {
+                            background-color: rgb(90, 90, 90);
                         }
                     }
 
@@ -1009,9 +1014,14 @@ body {
                             display: flex;
                             align-items: flex-start;
                             text-align: center;
-                            background-color: red;
+                            background-color: black;
                             border-radius: 100%;
-                            padding: 0 .425rem 3px;
+                            padding: 0 8px 4px;
+                            transition: all .15s;
+                        }
+
+                        p:hover {
+                            background-color: rgb(48, 44, 44);
                         }
 
                     }
@@ -1020,49 +1030,127 @@ body {
 
             &-second {
                 display: flex;
-                background-color: green;
+                background-color: rgb(48, 44, 44);
+                color: white;
+                padding: .25rem 0 0 .75rem;
+                border-bottom: 1px solid rgb(158, 158, 158);
 
                 &-leftbar {
-                    flex: 1;
+                    flex: .75;
                     display: flex;
                     align-items: center;
+                    justify-content: space-between;
+                    column-gap: .5rem;
+                    padding-right: 1rem;
+
+
+                    p {
+                        color: grey;
+                        position: relative;
+                        bottom: 1px;
+                    }
+
+                    i {
+                        font-size: .85rem;
+                    }
                 }
 
                 &-centerbar {
                     flex: 10;
                     display: flex;
                     justify-content: space-between;
-                    align-items: center;
+                    border-radius: 2rem;
+                    background-color: rgb(63, 61, 61);
+                    padding: 2.5px;
+
+                    i {
+                        color: grey;
+                        border-radius: 1rem;
+                        font-size: .85rem;
+                        display: flex;
+                        align-items: center;
+                        transition: all .15s;
+                        box-sizing: content-box;
+                        padding: 5.5px 10px;
+                    }
+
+                    // URL
+                    p {
+                        display: flex;
+                        align-items: center;
+                        font-size: .85rem;
+                        margin-left: 2px;
+                        cursor: text;
+                    }
+
+                    i:hover {
+                        background-color: rgba(128, 128, 128, 0.375);
+                    }
 
                     div {
                         display: flex;
-                        align-items: center;
+                        align-items: stretch;
                     }
                 }
 
                 &-rightbar {
                     display: flex;
                     align-items: center;
-                    flex: 1;
+                    flex: .5;
+                    justify-content: space-between;
+                    padding: 0 .5rem;
+                    column-gap: .5rem;
+                    ;
 
+                    // Z
                     p {
                         border-radius: 100%;
-                        padding: 0 .45rem 3px;
+                        background-color: palevioletred;
+                        border-radius: 100%;
+                        font-size: .85rem;
+                        padding: 1.75px 7.5px;
+                    }
+
+                    img {
+                        height: 1.1rem;
+                        object-fit: cover;
+                        border: 3.5px solid transparent;
+                    }
+
+                    i {
+                        padding: 3.65px 10px;
+                    }
+
+                    img,
+                    i {
+                        border-radius: 100%;
+                        box-sizing: content-box;
+                    }
+
+                    img:hover,
+                    i:hover {
+                        transition: all .15s;
+                        border-color: rgba(128, 128, 128, 0.375);
+                        background-color: rgba(128, 128, 128, 0.375);
                     }
                 }
             }
         }
 
+        &-main.close {
+            display: none;
+        }
+
         &-main {
             display: flex;
             flex-direction: column;
-            height: 87%;
+            height: 91.2%;
 
             &-header {
                 display: flex;
                 font-size: .9rem;
                 letter-spacing: -.5px;
-                margin: 1rem 1.5rem;
+                margin: .85rem 1.5rem;
 
                 p:hover {
                     text-decoration: underline;
@@ -1091,7 +1179,7 @@ body {
                     }
 
                     p:last-child:hover {
-                        outline: 4px solid rgb(240,240,240);
+                        outline: 4px solid rgb(240, 240, 240);
                     }
 
                     img {
@@ -1154,16 +1242,17 @@ body {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                 
+
 
                     &-search {
                         border: 1px solid var(--grey);
                         border-radius: 2rem;
-                        padding: .5rem 1rem .75rem;
-                        
+                        padding: .35rem .5rem;
+                        display: flex;
 
                         input {
                             width: 26.5rem;
+                            padding: .35rem 0;
                             border: none;
                             cursor: text;
                         }
@@ -1173,21 +1262,22 @@ body {
                         }
 
                         i {
+                            display: flex;
+                            align-items: center;
                             color: rgb(179, 179, 179);
+                            font-size: .85rem;
+                            cursor: pointer;
+                            padding: 0 .5rem;
                         }
 
                         i:first-child {
-                            font-size: .9rem;
+                            font-size: .85rem;
                             margin-right: .75rem;
+                            cursor: default;
                         }
 
-                        i:last-child {
-                            margin-left: .85rem;
-                        }
 
-                        i:hover {
-                            cursor: pointer;
-                        }
+
                     }
 
                     &-search:hover {
@@ -1202,7 +1292,7 @@ body {
                         button {
                             border: 1px solid transparent;
                             border-radius: 3px;
-                            background-color: rgb(244, 250, 250);
+                            background-color: rgb(250, 250, 250);
                             color: rgb(80, 80, 80);
                             padding: .5rem 1rem;
                             cursor: pointer;
@@ -1219,17 +1309,18 @@ body {
             &-footer {
                 margin-top: auto;
 
-                &-first, &-second {
-                    background-color: rgb(242,242,242);
-                    color: rgb(112,117,122);
-                    
+                &-first,
+                &-second {
+                    background-color: rgb(242, 242, 242);
+                    color: rgb(112, 117, 122);
+
                     line-height: 4;
                     font-size: .85rem;
                 }
 
                 &-first {
                     display: flex;
-                    border-bottom: 1px solid rgb(218,220,224);
+                    border-bottom: 1px solid rgb(218, 220, 224);
                     padding: 0 1.5rem;
                 }
 
@@ -1242,20 +1333,81 @@ body {
                         cursor: pointer;
                     }
 
-                    &-leftbar, &-rightbar {
+                    &-leftbar,
+                    &-rightbar {
                         column-gap: 1.25rem;
                     }
 
                     &-leftbar {
                         flex: 1;
                         display: flex;
-                        
+
                     }
 
                     &-rightbar {
                         flex: 1;
                         display: flex;
                         justify-content: flex-end;
+                    }
+                }
+            }
+        }
+
+        &-search {
+            background-color: lightblue;
+            height: 91.2%;
+            display: flex;
+            flex-direction: column;
+
+            &-header {
+                display: flex;
+                flex-direction: column;
+
+                &-first {
+                    display: flex;
+
+                    &-google {
+                        display: flex;
+
+                        h1:nth-child(1) {
+                            position: relative;
+                            color: #4285F4;
+                            font-size: 2.1rem;
+                            bottom: 9px;
+                        }
+
+                        h1:nth-child(2) {
+                            color: #EA4335;
+                        }
+
+                        h1:nth-child(3) {
+                            color: #FBBC05;
+                        }
+
+                        h1:nth-child(4) {
+                            color: #4285F4;
+                        }
+
+                        h1:nth-child(5) {
+                            color: #34A853;
+                        }
+
+                        h1:nth-child(6) {
+                            color: #EA4335;
+                        }
+                    }
+
+                    &-settings {
+
+                    }
+                }
+
+                &-second {
+                    display: flex;
+                    border-bottom: 1px solid grey;
+
+                    &-tabs {
+                        display: flex;
                     }
                 }
             }

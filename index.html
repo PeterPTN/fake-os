@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./styles/styles.css" rel="stylesheet" type="text/css" />
-    
+
     <script src="https://kit.fontawesome.com/96bdee1dc6.js" crossorigin="anonymous"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <script src="./scripts/scripts.js"></script>
 
     <title>Windows 10</title>
 </head>
@@ -261,6 +263,7 @@
             </main>
         </section>
 
+        <!-- Chrome -->
         <section class="desktop__chrome">
             <header class="desktop__chrome-header">
                 <div class="desktop__chrome-header-first">
@@ -297,9 +300,11 @@
                         <i class="fa-solid fa-house"></i>
                     </div>
 
+                    <!-- on click outline -->
                     <div class="desktop__chrome-header-second-centerbar">
                         <div class="desktop__chrome-header-second-centerbar-left">
                             <i class="fa-solid fa-lock"></i>
+                            <!-- Change background color with event listener -->
                             <p>google.com</p>
                         </div>
 
@@ -318,7 +323,65 @@
                 </div>
             </header>
 
-            <main class="desktop__chrome-main">
+            <!-- Chrome Search Result -->
+            <div class="desktop__chrome-search">
+                <header class="desktop__chrome-search-header">
+                    <div class="desktop__chrome-search-header-first">
+                        <div class="desktop__chrome-search-header-first-google">
+                            <h1>G</h1>
+                            <h1>o</h1>
+                            <h1>o</h1>
+                            <h1>g</h1>
+                            <h1>l</h1>
+                            <h1>e</h1>
+                        </div>
+
+                        <form action="" class="desktop__chrome-main-content-form">
+                            <div class="desktop__chrome-main-content-form-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text">
+                                <i class="fa-solid fa-microphone"></i>
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                        </form>
+
+                        <div class="desktop__chrome-search-header-first-settings">
+                            <!-- Add settings thing -->
+                        </div>
+                    </div>
+
+                    <div class="desktop__chrome-search-header-second">
+                        <div class="desktop__chrome-search-header-second-tabs">
+                            <p>All</p>
+                            <p>Images</p>
+                            <p>News</p>
+                            <p>Videos</p>
+                            <p>Shopping</p>
+                            <p>More</p>
+                            <p>Tools</p>
+                        </div>
+                    </div>
+                </header>
+
+                <div>
+                    <p>About 0 results (0.19 seconds)</p>
+                    <h2>Did you mean: <h2 id="searchResultTitle"></h2></h2>
+                    <p>No results containing all your search terms were found.</p>
+                    <p>Your search - <em id="searchResult"></em> - did not match any documents.</p>
+                    <h3>Suggestions:</h3>
+
+                    <ul>
+                        <li>Make sure that all words are spelled correctly.</li>
+                        <li>Try different keywords.</li>
+                        <li>Try more general keywords.</li>
+                    </ul>
+                </div>
+
+                <img src="./images/yeti.png" alt="">
+            </div>
+
+            <!-- Chrome Search Page -->
+            <main class="desktop__chrome-main close">
                 <div class="desktop__chrome-main-header">
                     <div class="desktop__chrome-main-header-leftbar">
                         <p>About</p>
@@ -379,7 +442,6 @@
                 </div>
             </main>
         </section>
-
     </div>
 
     <div class="taskbar">
