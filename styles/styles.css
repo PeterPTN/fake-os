@@ -68,8 +68,8 @@ body {
 .desktop--icon {
   padding-bottom: 1.2rem;
   border: 1px solid transparent;
-  height: 8vh;
-  width: 4vw;
+  height: 4.1rem;
+  width: 4.35rem;
 }
 .desktop--icon:hover {
   border: 1px solid rgb(150, 176, 211);
@@ -1281,25 +1281,106 @@ body {
 .desktop__chrome-search-footer-second p:hover {
   color: rgba(0, 0, 0, 0.685);
 }
-.desktop-startmenu {
+.desktop__startmenu.open {
+  display: flex;
+}
+.desktop__startmenu {
   position: absolute;
   z-index: 100;
-  background-color: red;
+  background-color: rgb(27, 27, 27);
   bottom: 0;
   left: 0;
-  height: 50rem;
-  width: 30rem;
+  height: 35rem;
+  width: 17.5rem;
+  display: flex;
+  column-gap: 1rem;
+  color: rgb(245, 245, 245);
+  display: none;
+}
+.desktop__startmenu-leftcol {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  height: 35rem;
+  width: 3.65rem;
+  background-color: rgb(27, 27, 27);
+  overflow-x: hidden;
+}
+.desktop__startmenu-leftcol li:first-child {
+  margin-bottom: auto;
+}
+.desktop__startmenu-leftcol li {
+  padding: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.desktop__startmenu-leftcol p {
+  margin-left: 2rem;
+}
+.desktop__startmenu-leftcol li:hover {
+  background-color: grey;
+}
+.desktop__startmenu-leftcol li:active {
+  background-color: rgb(173, 173, 173);
+}
+.desktop__startmenu-rightcol.hover::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  border-radius: 2rem;
+}
+.desktop__startmenu-rightcol {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 5px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  margin-left: 3.6rem;
+}
+.desktop__startmenu-rightcol::-webkit-scrollbar {
+  width: 3px;
+}
+.desktop__startmenu-rightcol > .desktop__startmenu-rightcol-letter {
+  padding-left: 0.5rem;
+}
+.desktop__startmenu-rightcol img {
+  height: 1.75rem;
+  margin-right: 5px;
+}
+.desktop__startmenu-rightcol p {
+  display: flex;
+  align-items: center;
+  transition: all 0.05s;
+  padding: 5px 0;
+  font-size: 0.85rem;
+}
+.desktop__startmenu-rightcol p:hover {
+  background: radial-gradient(rgb(67, 67, 67) 5%, rgb(27, 27, 27));
+}
+.desktop__startmenu-rightcol p:active {
+  transition: all 0.15s;
+  transform: scale(0.985);
 }
 
 .taskbar {
-  width: 100%;
   height: 4.35%;
-  background-color: black;
   display: flex;
   justify-content: space-between;
+  position: relative;
+  background-color: rgba(26, 26, 26, 0.6);
+}
+.taskbar--blur {
+  background-image: url("../images/wallpaper.jpg");
+  background-position: 100% 87%;
+  filter: blur(10px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100vw;
 }
 .taskbar--icon {
-  width: 2.545vw;
+  width: 2.8rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1314,11 +1395,20 @@ body {
   width: fit-content;
   display: flex;
 }
+.taskbar__left-windows.open {
+  background-color: grey;
+}
 .taskbar__left-windows {
   color: white;
 }
 .taskbar__left-windows i {
   font-size: 1.2vw;
+}
+.taskbar__left-windows:hover {
+  color: rgb(245, 128, 128);
+}
+.taskbar__left-windows:active {
+  color: rgb(248, 48, 48);
 }
 .taskbar__left-search {
   color: white;
