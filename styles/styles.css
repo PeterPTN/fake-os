@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* Colors */
 .desktop__calculator.focus {
   border: 1px solid red;
 }
@@ -166,37 +167,36 @@
   background-color: white;
   width: 100%;
   height: 100%;
-  display: none;
 }
-F .desktop__chrome-header {
+.desktop__chrome-header {
   display: flex;
   flex-direction: column;
   background-color: black;
   padding-top: 3.5px;
 }
-F .desktop__chrome-header-first {
+.desktop__chrome-header-first {
   color: white;
 }
-F .desktop__chrome-header-first-leftbar {
+.desktop__chrome-header-first-leftbar {
   display: flex;
   position: relative;
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
-F .desktop__chrome-header-first-leftbar-start {
+.desktop__chrome-header-first-leftbar-start {
   position: relative;
   background-color: rgb(48, 44, 44);
   height: 2.15rem;
   width: 0.5rem;
   z-index: 0;
 }
-F .desktop__chrome-header-first-leftbar-start.copy {
+.desktop__chrome-header-first-leftbar-start.copy {
   position: absolute;
   background-color: black;
   border-bottom-right-radius: 35rem;
   z-index: 2;
 }
-F .desktop__chrome-header-first-leftbar-end {
+.desktop__chrome-header-first-leftbar-end {
   position: relative;
   background-color: rgb(48, 44, 44);
   border-bottom-left-radius: 0;
@@ -204,13 +204,13 @@ F .desktop__chrome-header-first-leftbar-end {
   width: 0.5rem;
   z-index: 0;
 }
-F .desktop__chrome-header-first-leftbar-end.copy {
+.desktop__chrome-header-first-leftbar-end.copy {
   position: absolute;
   background-color: black;
   border-bottom-left-radius: 0.35rem;
   z-index: 2;
 }
-F .desktop__chrome-header-first-leftbar-tab {
+.desktop__chrome-header-first-leftbar-tab {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -222,23 +222,23 @@ F .desktop__chrome-header-first-leftbar-tab {
   border-top-right-radius: 0.5rem;
   font-size: 0.75rem;
 }
-F .desktop__chrome-header-first-leftbar-tab img {
+.desktop__chrome-header-first-leftbar-tab img {
   height: 1rem;
 }
-F .desktop__chrome-header-first-leftbar-tab p:last-child {
+.desktop__chrome-header-first-leftbar-tab p:last-child {
   margin-left: auto;
   border-radius: 100%;
   padding: 0 1.75px;
 }
-F .desktop__chrome-header-first-leftbar-tab P:last-child:hover {
+.desktop__chrome-header-first-leftbar-tab P:last-child:hover {
   background-color: rgb(90, 90, 90);
 }
-F .desktop__chrome-header-first-leftbar-newtab {
+.desktop__chrome-header-first-leftbar-newtab {
   font-size: 1.2rem;
   align-self: flex-end;
   margin-bottom: 3.5px;
 }
-F .desktop__chrome-header-first-leftbar-newtab p {
+.desktop__chrome-header-first-leftbar-newtab p {
   display: flex;
   align-items: flex-start;
   text-align: center;
@@ -247,17 +247,17 @@ F .desktop__chrome-header-first-leftbar-newtab p {
   padding: 0 8px 4px;
   transition: all 0.15s;
 }
-F .desktop__chrome-header-first-leftbar-newtab p:hover {
+.desktop__chrome-header-first-leftbar-newtab p:hover {
   background-color: rgb(48, 44, 44);
 }
-F .desktop__chrome-header-second {
+.desktop__chrome-header-second {
   display: flex;
   background-color: rgb(48, 44, 44);
   color: white;
   padding: 4px 0 2px 1rem;
   border-bottom: 1px solid rgb(158, 158, 158);
 }
-F .desktop__chrome-header-second-leftbar {
+.desktop__chrome-header-second-leftbar {
   flex: 0.75;
   display: flex;
   align-items: center;
@@ -265,15 +265,15 @@ F .desktop__chrome-header-second-leftbar {
   column-gap: 0.5rem;
   padding-right: 1rem;
 }
-F .desktop__chrome-header-second-leftbar p {
+.desktop__chrome-header-second-leftbar p {
   color: grey;
   position: relative;
   bottom: 1px;
 }
-F .desktop__chrome-header-second-leftbar i {
+.desktop__chrome-header-second-leftbar i {
   font-size: 0.85rem;
 }
-F .desktop__chrome-header-second-centerbar {
+.desktop__chrome-header-second-centerbar {
   flex: 10;
   display: flex;
   justify-content: space-between;
@@ -281,7 +281,7 @@ F .desktop__chrome-header-second-centerbar {
   background-color: rgb(63, 61, 61);
   padding: 2.5px;
 }
-F .desktop__chrome-header-second-centerbar i {
+.desktop__chrome-header-second-centerbar i {
   color: grey;
   border-radius: 1rem;
   font-size: 0.85rem;
@@ -291,21 +291,21 @@ F .desktop__chrome-header-second-centerbar i {
   box-sizing: content-box;
   padding: 5.5px 10px;
 }
-F .desktop__chrome-header-second-centerbar p {
+.desktop__chrome-header-second-centerbar p {
   display: flex;
   align-items: center;
   font-size: 0.85rem;
   margin-left: 2px;
   cursor: text;
 }
-F .desktop__chrome-header-second-centerbar i:hover {
+.desktop__chrome-header-second-centerbar i:hover {
   background-color: rgba(128, 128, 128, 0.375);
 }
-F .desktop__chrome-header-second-centerbar div {
+.desktop__chrome-header-second-centerbar div {
   display: flex;
   align-items: stretch;
 }
-F .desktop__chrome-header-second-rightbar {
+.desktop__chrome-header-second-rightbar {
   display: flex;
   align-items: center;
   flex: 0.5;
@@ -313,30 +313,28 @@ F .desktop__chrome-header-second-rightbar {
   padding: 0 0.5rem;
   column-gap: 0.5rem;
 }
-F .desktop__chrome-header-second-rightbar p {
+.desktop__chrome-header-second-rightbar p {
   border-radius: 100%;
   background-color: palevioletred;
   border-radius: 100%;
   font-size: 0.85rem;
   padding: 1.75px 7.5px;
+  outline: 2px solid transparent;
 }
-F .desktop__chrome-header-second-rightbar img {
+.desktop__chrome-header-second-rightbar img {
   height: 1.1rem;
   object-fit: cover;
   border: 3.5px solid transparent;
 }
-F .desktop__chrome-header-second-rightbar i {
+.desktop__chrome-header-second-rightbar i {
   padding: 3.65px 10px;
 }
-F .desktop__chrome-header-second-rightbar img,
-F .desktop__chrome-header-second-rightbar i {
+.desktop__chrome-header-second-rightbar :is(img, i) {
   border-radius: 100%;
   box-sizing: content-box;
 }
-F .desktop__chrome-header-second-rightbar img:hover,
-F .desktop__chrome-header-second-rightbar i:hover {
-  transition: all 0.15s;
-  border-color: rgba(128, 128, 128, 0.375);
+.desktop__chrome-header-second-rightbar :is(img:hover, i:hover, p:hover) {
+  transition: all 0.25s;
   background-color: rgba(128, 128, 128, 0.375);
 }
 .desktop__chrome-main.close {
@@ -376,15 +374,15 @@ F .desktop__chrome-header-second-rightbar i:hover {
   color: white;
   text-decoration: none;
 }
-.desktop__chrome-main-header-rightbar p:last-child:hover {
-  outline: 4px solid rgb(240, 240, 240);
-}
 .desktop__chrome-main-header-rightbar img {
   width: 1.95rem;
   object-fit: contain;
   box-sizing: content-box;
   border: 0.15rem solid transparent;
   cursor: pointer;
+}
+.desktop__chrome-main-header-rightbar p:last-child:hover {
+  outline: 4px solid rgb(240, 240, 240);
 }
 .desktop__chrome-main-header-rightbar img:hover {
   background-color: rgb(240, 240, 240);
@@ -430,7 +428,7 @@ F .desktop__chrome-header-second-rightbar i:hover {
   align-items: center;
 }
 .desktop__chrome-main-content-form-search {
-  border: 1px solid var(--grey);
+  border: 1px solid rgba(211, 211, 211, 0.5);
   border-radius: 2rem;
   padding: 0.35rem 0.5rem;
   display: flex;
@@ -534,7 +532,7 @@ F .desktop__chrome-header-second-rightbar i:hover {
 }
 .desktop__chrome-search-header-first input {
   margin-left: 1rem;
-  width: 30rem;
+  width: 25vw;
 }
 .desktop__chrome-search-header-first-google {
   display: flex;
@@ -598,7 +596,7 @@ F .desktop__chrome-header-second-rightbar i:hover {
 .desktop__chrome-search-header-second {
   display: flex;
   border-bottom: 1px solid rgba(128, 128, 128, 0.164);
-  padding: 0 14.5rem;
+  padding-left: 12vw;
 }
 .desktop__chrome-search-header-second-tabs {
   display: flex;
@@ -628,7 +626,8 @@ F .desktop__chrome-header-second-rightbar i:hover {
   display: flex;
   flex-direction: column;
   row-gap: 0.85rem;
-  padding: 0.75rem 14.5rem;
+  padding: 0.75rem 0;
+  padding-left: 12vw;
   font-size: 0.9rem;
 }
 .desktop__chrome-search-content * {
@@ -673,7 +672,7 @@ F .desktop__chrome-header-second-rightbar i:hover {
 .desktop__chrome-search-footer-first {
   display: flex;
   border-bottom: 1px solid rgb(218, 220, 224);
-  padding-left: 14rem;
+  padding-left: 12vw;
   margin-top: 0.5rem;
 }
 .desktop__chrome-search-footer-first p:first-child {
@@ -700,7 +699,7 @@ F .desktop__chrome-header-second-rightbar i:hover {
 }
 .desktop__chrome-search-footer-second {
   display: flex;
-  padding-left: 14rem;
+  padding-left: 12vw;
   column-gap: 1.5rem;
   margin-bottom: 0.5rem;
 }
@@ -801,8 +800,8 @@ F .desktop__chrome-header-second-rightbar i:hover {
   padding: 3px 0;
 }
 .desktop__bin-header-first-leftbar-paper:hover {
-  border: 1px solid var(--blueborder);
-  background-color: var(--lightblue);
+  border: 1px solid rgba(124, 193, 240, 0.726);
+  background-color: rgba(200, 223, 238, 0.486);
 }
 .desktop__bin-header-first-leftbar-arrow-container {
   display: flex;
@@ -822,8 +821,8 @@ F .desktop__chrome-header-second-rightbar i:hover {
   padding-bottom: 3px;
 }
 .desktop__bin-header-first-leftbar-arrow-container:hover {
-  border: 1px solid var(--blueborder);
-  background-color: var(--lightblue);
+  border: 1px solid rgba(124, 193, 240, 0.726);
+  background-color: rgba(200, 223, 238, 0.486);
 }
 .desktop__bin-header-first-leftbar p {
   position: relative;
@@ -888,13 +887,13 @@ F .desktop__chrome-header-second-rightbar i:hover {
   background-color: lightcoral;
 }
 .desktop__bin-header-second.focus {
-  border-bottom: 1px solid var(--grey);
+  border-bottom: 1px solid rgba(211, 211, 211, 0.5);
 }
 .desktop__bin-header-second {
   display: flex;
   justify-content: space-between;
   font-size: 0.75rem;
-  border-bottom: 1px solid var(--grey);
+  border-bottom: 1px solid rgba(211, 211, 211, 0.5);
 }
 .desktop__bin-header-second-left {
   display: flex;
@@ -923,11 +922,11 @@ F .desktop__chrome-header-second-rightbar i:hover {
   flex: 1.625;
   border: solid 1px transparent;
   border-top: solid 1px transparent;
-  background: linear-gradient(white, white) padding-box, linear-gradient(var(--grey), rgb(255, 255, 255)) border-box;
+  background: linear-gradient(white, white) padding-box, linear-gradient(rgba(211, 211, 211, 0.5), rgb(255, 255, 255)) border-box;
 }
 .desktop__bin-header-second-left *:hover {
-  border-left: 1px solid var(--grey);
-  border-right: 1px solid var(--grey);
+  border-left: 1px solid rgba(211, 211, 211, 0.5);
+  border-right: 1px solid rgba(211, 211, 211, 0.5);
 }
 .desktop__bin-header-second-left p:first-child:hover {
   background-color: rgb(197, 48, 48);
@@ -953,8 +952,8 @@ F .desktop__chrome-header-second-rightbar i:hover {
   color: grey;
 }
 .desktop__bin-header-second-right i:hover {
-  border: 1px solid var(--blueborder);
-  background-color: var(--lightblue);
+  border: 1px solid rgba(124, 193, 240, 0.726);
+  background-color: rgba(200, 223, 238, 0.486);
 }
 .desktop__bin-header-second-right img {
   height: 100%;
@@ -988,15 +987,15 @@ F .desktop__chrome-header-second-rightbar i:hover {
   border: 1px solid transparent;
 }
 .desktop__bin-header-third-leftbar p:last-child:hover {
-  border: 1px solid var(--blueborder);
-  background-color: var(--lightblue);
+  border: 1px solid rgba(124, 193, 240, 0.726);
+  background-color: rgba(200, 223, 238, 0.486);
 }
 .desktop__bin-header-third-middlebar {
   flex: 3;
   display: flex;
   justify-content: space-between;
   margin-right: 0.5rem;
-  border: 1px solid var(--grey);
+  border: 1px solid rgba(211, 211, 211, 0.5);
 }
 .desktop__bin-header-third-middlebar-left {
   display: flex;
@@ -1027,8 +1026,8 @@ F .desktop__chrome-header-second-rightbar i:hover {
 }
 .desktop__bin-header-third-middlebar-left i:hover,
 .desktop__bin-header-third-middlebar-left p:hover {
-  border: 1px solid var(--blueborder);
-  background-color: var(--lightblue);
+  border: 1px solid rgba(124, 193, 240, 0.726);
+  background-color: rgba(200, 223, 238, 0.486);
 }
 .desktop__bin-header-third-middlebar-right {
   display: flex;
@@ -1044,15 +1043,15 @@ F .desktop__chrome-header-second-rightbar i:hover {
   color: grey;
 }
 .desktop__bin-header-third-middlebar-right i:last-child {
-  border-left: 1px solid var(--grey);
+  border-left: 1px solid rgba(211, 211, 211, 0.5);
 }
 .desktop__bin-header-third-middlebar-right i:hover {
-  border: 1px solid var(--blueborder);
-  background-color: var(--lightblue);
+  border: 1px solid rgba(124, 193, 240, 0.726);
+  background-color: rgba(200, 223, 238, 0.486);
 }
 .desktop__bin-header-third-rightbar {
   flex: 1;
-  border: 1px solid var(--grey);
+  border: 1px solid rgba(211, 211, 211, 0.5);
   display: flex;
   align-items: stretch;
 }
@@ -1088,7 +1087,7 @@ F .desktop__chrome-header-second-rightbar i:hover {
   display: flex;
 }
 .desktop__bin-header-third-rightbar form .bin-clear:hover {
-  background-color: var(--lightblue);
+  background-color: rgba(200, 223, 238, 0.486);
 }
 .desktop__bin-header-third-rightbar form .bin-clear.open {
   display: flex;
@@ -1143,7 +1142,7 @@ F .desktop__chrome-header-second-rightbar i:hover {
   color: teal;
 }
 .desktop__bin-body-side li:hover {
-  background-color: var(--lightblue);
+  background-color: rgba(200, 223, 238, 0.486);
 }
 .desktop__bin-body-main {
   flex: 5;
@@ -1190,11 +1189,11 @@ F .desktop__chrome-header-second-rightbar i:hover {
   text-align: center;
 }
 .desktop__bin-body-main-items div:hover {
-  background-color: var(--lightblue);
+  background-color: rgba(200, 223, 238, 0.486);
 }
 .desktop__bin-body-main-items-one.focus, .desktop__bin-body-main-items-two.focus {
-  background-color: var(--activeblue);
-  border: 1px solid var(--blueborder);
+  background-color: rgba(194, 223, 250, 0.938);
+  border: 1px solid rgba(124, 193, 240, 0.726);
 }
 .desktop__bin-footer {
   height: 1.55rem;
@@ -1220,8 +1219,8 @@ F .desktop__chrome-header-second-rightbar i:hover {
   object-fit: contain;
 }
 .desktop__bin-footer-rightbar img:first-child {
-  border: 1px solid var(--blueborder);
-  background: var(--lightblue);
+  border: 1px solid rgba(124, 193, 240, 0.726);
+  background: rgba(200, 223, 238, 0.486);
 }
 
 .desktop__startmenu.open {
@@ -1345,7 +1344,7 @@ F .desktop__chrome-header-second-rightbar i:hover {
   color: white;
 }
 .taskbar__left-windows i {
-  font-size: 1.2vw;
+  font-size: 1.1rem;
 }
 .taskbar__left-windows:hover {
   color: rgb(245, 128, 128);
@@ -1358,7 +1357,7 @@ F .desktop__chrome-header-second-rightbar i:hover {
 }
 .taskbar__left-search i {
   transform: rotatey(180deg);
-  font-size: 0.95vw;
+  font-size: 1.1rem;
 }
 .taskbar__left-active {
   width: fit-content;
@@ -1409,10 +1408,6 @@ F .desktop__chrome-header-second-rightbar i:hover {
   text-decoration: none;
   scroll-behavior: smooth;
   list-style: none;
-  --grey: rgba(211, 211, 211, 0.5);
-  --activeblue: rgba(194, 223, 250, 0.938);
-  --lightblue: rgba(200, 223, 238, 0.486);
-  --blueborder: rgba(124, 193, 240, 0.726);
 }
 
 .text-center {

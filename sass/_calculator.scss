@@ -1,0 +1,211 @@
+@use 'imports' as *;
+
+.desktop {
+
+    // Calculator App
+    &__calculator.focus {
+        border: 1px solid red;
+    }
+
+    &__calculator {
+        background-color: rgb(245, 245, 245);
+        height: fit-content;
+        border: 1px solid rgba(128, 128, 128, 0.637);
+        box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.363);
+        position: absolute;
+        left: 20%;
+        top: 15%;
+
+        // Debugging
+        display: none;
+
+        &-header {
+            display: flex;
+            flex-direction: column;
+            row-gap: .5rem;
+
+            &-first {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 0 0 1.1rem;
+
+                &-leftbar {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 1rem;
+
+                    img {
+                        object-fit: contain;
+                        height: 1rem;
+                    }
+
+                    p {
+                        font-size: .8rem;
+                    }
+                }
+
+                &-rightbar {
+                    display: flex;
+                    align-items: stretch;
+                    color: rgba(85, 85, 85, 0.719);
+
+                    i,
+                    p {
+                        padding: .4rem 1rem;
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    i:first-child {
+                        font-size: .8rem;
+                    }
+
+                    i:nth-child(2) {
+                        font-size: .65rem;
+                    }
+
+                    i:last-child {
+                        font-size: 1rem;
+                    }
+
+                    i:hover {
+                        background-color: rgb(211, 211, 211);
+                    }
+
+                    p:hover {
+                        background-color: rgb(224, 0, 0);
+                        color: white;
+                    }
+                }
+            }
+
+            &-second {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 1.2rem 0 .5rem;
+
+                img {
+                    height: 1rem;
+                    border: 7px solid transparent;
+                    box-sizing: content-box;
+                    margin-right: 3px;
+                    border-radius: 3px;
+                }
+
+                img:hover {
+                    background-color: rgba(128, 128, 128, 0.080);
+                    border-color: rgba(128, 128, 128, 0.010);
+                }
+
+                &-leftbar {
+                    display: flex;
+                    align-items: center;
+
+                    // Standard
+                    p {
+                        font-weight: bold;
+                        font-size: 1.25rem;
+                    }
+
+                    img:first-child {
+                        align-self: stretch;
+                        padding: 0px 3.5px;
+                    }
+
+                    img:last-child {
+                        margin-left: 1rem;
+                    }
+                }
+
+                &-rightbar {
+                    display: flex;
+                }
+            }
+        }
+
+        &-main {
+
+            &-display {
+                height: 6rem;
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-end;
+                padding: 1rem 1rem;
+
+                p {
+                    font-size: 3rem;
+                }
+            }
+
+            &-memory {
+                display: flex;
+                align-items: center;
+                font-size: .85rem;
+
+                p {
+                    flex: 1;
+                    text-align: center;
+                    padding: 5px 0rem;
+                    border-radius: 2px;
+                }
+
+                &-greyout {
+                    color: rgba(128, 128, 128, 0.479);
+                }
+
+                &-nogreyout:hover {
+                    background-color: rgba(128, 128, 128, 0.080);
+                    ;
+                }
+            }
+
+            &-keys {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                align-items: center;
+                gap: 3px;
+                padding: 0 5px 5px 5px;
+
+
+
+                img {
+                    height: .9rem;
+                    box-sizing: content-box;
+                }
+
+                button {
+                    font-size: 1.05rem;
+                    height: 3.25rem;
+                    width: 4.7rem;
+                    text-align: center;
+                    border-radius: .25rem;
+                    background-color: white;
+                    border: 1px solid rgba(167, 167, 167, 0.301);
+                }
+
+                button:last-child {
+                    color: white;
+                    background-color: darkred;
+                }
+
+                &>&-greyout {
+                    background-color: rgb(248, 248, 250);
+                }
+
+                &-greyout.divide {
+                    font-size: 1.2rem;
+                    color: rgb(65, 65, 65);
+                }
+
+                button:hover {
+                    filter: brightness(.99);
+                }
+
+                button:last-child:hover {
+                    background-color: rgb(168, 69, 69);
+                }
+            }
+        }
+    }
+}

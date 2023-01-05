@@ -1,0 +1,607 @@
+@use 'imports' as *;
+
+.desktop {
+
+    // Bin App
+    &__bin.focus {
+        border: 1px solid red;
+    }
+
+    &__bin {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        border: 1px solid rgba(128, 128, 128, 0.753);
+        box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.281);
+        width: 700px;
+        height: 500px;
+        position: relative;
+        top: 10rem;
+        margin: 0 auto;
+
+        // Debugging
+        display: none;
+
+        &-header {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+
+            &-first.focus {
+                color: white;
+                background-color: darkred;
+            }
+
+            &-first {
+                display: flex;
+                align-items: stretch;
+                justify-content: flex-start;
+                flex: 1.25;
+
+                &-leftbar {
+                    align-items: center;
+                    display: flex;
+                    column-gap: .25rem;
+                    padding: 5px;
+
+
+                    &-bin,
+                    &-paper,
+                    &-folder {
+                        height: 1rem;
+                        width: 1rem;
+                    }
+
+                    &-tick {
+
+                        position: absolute;
+                        height: .35rem;
+                        width: .35rem;
+                        left: 2.35rem;
+                    }
+
+                    &-paper {
+                        box-sizing: content-box;
+                        border: 1px solid transparent;
+                        padding: 3px 0;
+                    }
+
+                    &-paper:hover {
+                        border: 1px solid $blue-border;
+                        background-color: $light-blue;
+                    }
+
+                    &-arrow-container {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        row-gap: .1rem;
+                        padding: 0 2px;
+                        border: 1px solid transparent;
+
+                        div:first-child {
+                            border-bottom: 1px solid black;
+                            padding: .25rem;
+                        }
+
+                        div:last-child {
+                            border: 3px solid black;
+                            border-color: black transparent transparent transparent;
+                            padding-bottom: 3px;
+                        }
+                    }
+
+                    &-arrow-container:hover {
+                        border: 1px solid $blue-border;
+                        background-color: $light-blue;
+                    }
+
+                    p {
+                        position: relative;
+                        top: -3px;
+                        font-size: .75rem;
+                        font-weight: lighter;
+                    }
+                }
+
+                &-middlebar.focus {
+                    border-top: 3px solid red;
+
+                }
+
+                &-middlebar {
+                    display: flex;
+                    align-items: stretch;
+                    font-size: .75rem;
+                    flex: 1;
+                    border-top: 3px solid white;
+
+                    p {
+                        display: flex;
+                        align-items: center;
+                        ;
+                    }
+
+                    // Manage
+                    p:first-child {
+                        padding: 0 2rem;
+                        background-color: rgb(238, 202, 255);
+                        margin-left: 10.5rem;
+                    }
+
+                    // Recycline Bin
+                    .bin-tag:last-child {
+                        opacity: .5;
+                        position: relative;
+                        top: -3px;
+                        margin-left: 1rem;
+                    }
+
+                    .bin-tag.focus {
+                        color: white;
+                    }
+
+                }
+
+                &-rightbar {
+                    display: flex;
+                    align-items: center;
+                    justify-self: center;
+
+                    i {
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        width: 100%;
+                        padding: 0 1rem;
+                        transition: all .2s;
+                        color: rgba(65, 65, 65, 0.418);
+
+                    }
+
+                    // Dash
+                    i:first-child {
+                        font-size: .75rem;
+                    }
+
+                    // Square
+                    i:nth-child(2) {
+                        font-size: .65rem;
+                        color: rgba(65, 65, 65, 0.664);
+                    }
+
+                    // Cross
+                    i:last-child {
+                        font-size: 1.05rem;
+                    }
+
+                    i:hover {
+                        color: black;
+                        background-color: lightcoral;
+                    }
+                }
+            }
+
+            // Second bar
+            &-second.focus {
+                border-bottom: 1px solid $grey;
+            }
+
+            &-second {
+                display: flex;
+                justify-content: space-between;
+                font-size: .75rem;
+                border-bottom: 1px solid $grey;
+
+                &-left {
+                    display: flex;
+                    width: 23.4rem;
+
+                    * {
+                        flex: 1;
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border: 1px solid transparent;
+                        transition: all .15s;
+                    }
+
+                    // File
+                    p:first-child {
+                        background-color: darkred;
+                        color: white;
+                        transition: all .15s;
+                    }
+
+                    // View
+                    p:nth-child(4) {
+                        margin-right: 3px;
+                    }
+
+                    // Recycle Bin Tools
+                    p:last-child {
+                        position: relative;
+                        top: -2px;
+                        flex: 1.625;
+                        border: solid 1px transparent;
+                        border-top: solid 1px transparent;
+                        background:
+                            linear-gradient(white, white) padding-box,
+                            linear-gradient($grey, rgb(255, 255, 255)) border-box;
+                    }
+
+                    *:hover {
+                        border-left: 1px solid $grey;
+                        border-right: 1px solid $grey;
+                    }
+
+                    p:first-child:hover {
+                        background-color: rgb(197, 48, 48);
+                    }
+
+                    p:last-child:hover {
+                        border: 1px solid rgb(238, 202, 255);
+                        border-bottom: solid 1px transparent;
+                    }
+                }
+
+                &-right {
+                    margin-right: .15rem;
+                    display: flex;
+                    align-items: stretch;
+                    justify-content: flex-end;
+
+
+                    * {
+                        padding: 0 .15rem;
+                    }
+
+                    i {
+                        display: flex;
+                        align-items: center;
+                        border: 1px solid transparent;
+                        font-size: .6rem;
+                        color: grey;
+                    }
+
+                    i:hover {
+                        border: 1px solid $blue-border;
+                        background-color: $light-blue;
+                    }
+
+                    img {
+                        height: 100%;
+                        width: 40%;
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            // Third bar
+            &-third {
+                display: flex;
+                margin: .25rem .5rem;
+
+                // Quadruple arrows
+                &-leftbar {
+                    flex: 1;
+                    display: flex;
+                    align-items: stretch;
+
+                    p {
+                        font-size: .75rem;
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: var(--grey);
+                    }
+
+                    p:nth-child(3) {
+                        position: relative;
+                        top: -.3rem;
+                    }
+
+                    p:last-child {
+                        color: grey;
+                        transition: all .35s;
+                        border: 1px solid transparent;
+                    }
+
+                    p:last-child:hover {
+                        border: 1px solid $blue-border;
+                        background-color: $light-blue;
+                    }
+                }
+
+                &-middlebar {
+                    flex: 3;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-right: .5rem;
+                    border: 1px solid $grey;
+
+
+                    &-left {
+                        display: flex;
+                        align-items: stretch;
+
+                        img {
+                            object-fit: contain;
+                            height: 100%;
+                            width: 20%;
+                            padding: 0 .1rem;
+                        }
+
+                        i {
+                            color: grey;
+                            font-size: .5rem;
+                        }
+
+                        p {
+                            font-size: .75rem;
+                            position: relative;
+                        }
+
+                        i,
+                        p {
+                            display: flex;
+                            align-items: center;
+                            border: 1px solid transparent;
+                            text-align: center;
+                            transition: all .35s;
+                            padding: .15rem;
+                        }
+
+                        i:hover,
+                        p:hover {
+                            border: 1px solid $blue-border;
+                            background-color: $light-blue;
+                        }
+                    }
+
+
+                    &-right {
+                        display: flex;
+
+                        i {
+                            flex: 1;
+                            display: flex;
+                            align-items: center;
+                            border: 1px solid transparent;
+                            transition: all .35s;
+                            padding: 0 .5rem;
+                            font-size: .75rem;
+                            color: grey;
+                        }
+
+                        i:last-child {
+                            border-left: 1px solid $grey;
+                        }
+
+                        i:hover {
+                            border: 1px solid $blue-border;
+                            background-color: $light-blue;
+                        }
+
+
+                    }
+                }
+
+                &-rightbar {
+                    flex: 1;
+                    border: 1px solid $grey;
+                    display: flex;
+                    align-items: stretch;
+
+                    .fa-magnifying-glass {
+                        display: flex;
+                        align-items: center;
+                        transform: rotate(90deg);
+                        margin: .15rem 0;
+                        padding: 0 .5rem;
+                        margin-left: .25rem;
+                        font-size: .75rem;
+                        color: grey;
+                    }
+
+                    form {
+                        display: flex;
+                        align-items: stretch;
+
+                        // Searchbar
+                        input {
+                            border: none;
+                            margin: .15rem 0;
+                            font-size: .72rem;
+                            padding: .15rem 0 .15rem;
+                        }
+
+                        input:focus {
+                            outline: none;
+                        }
+
+                        .bin-clear {
+                            border: 1px solid transparent;
+                            transition: all .35ms;
+                            align-items: center;
+                            margin: .15rem 0;
+                            color: grey;
+                            display: flex;
+                            // display: none;
+                        }
+
+                        .bin-clear:hover {
+                            background-color: $light-blue;
+                        }
+
+                        .bin-clear.open {
+                            display: flex;
+                        }
+
+                        // Submit button
+                        .bin-button {
+                            background-color: rgb(197, 48, 48);
+                            border: none;
+                            color: rgb(241, 241, 241);
+                        }
+
+                        .bin-button.open {
+                            display: block;
+                        }
+
+                        i {
+                            padding: 0 .25rem;
+                        }
+
+                        button {
+                            padding: 0 .5rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-body {
+            flex: 5;
+            display: flex;
+
+            &-side {
+                flex: 1.5;
+                border-right: 1px solid rgba(128, 128, 128, 0.082);
+
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 10px;
+                }
+
+                li {
+                    border: 1px solid transparent;
+                    display: flex;
+                    align-items: center;
+                    padding: 2px 10px;
+                    column-gap: 10px;
+
+                    p {
+                        font-size: .8rem;
+                    }
+
+                    i {
+                        color: grey;
+                        font-size: .65rem;
+                    }
+
+                    img {
+                        height: 100%;
+                        width: 14%;
+                        object-fit: contain;
+                    }
+
+                    i:hover {
+                        color: teal;
+                    }
+                }
+
+                li:hover {
+                    background-color: $light-blue;
+                }
+            }
+
+            &-main {
+                flex: 5;
+                display: flex;
+                flex-direction: column;
+
+                /* To be implemeneted eventually 8-)
+                &-header {
+                    flex: 1;
+                    display: flex;
+                    background-color: red;
+
+                    * {
+                        flex: 1;
+                    }
+
+                    *:hover {
+                        background: var(--lightblue);
+                    }
+                }
+                */
+
+                &-items {
+                    flex: 5;
+                    display: flex;
+                    font-size: .77rem;
+                    gap: 1rem;
+                    margin: .75rem;
+
+                    div {
+                        box-sizing: content-box;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        height: fit-content;
+                        width: 5rem;
+                        padding: .35rem .6rem;
+                        border: 1px solid transparent;
+
+                        img {
+                            width: 5rem;
+                            object-fit: contain;
+                        }
+
+                        p {
+                            text-align: center;
+
+                        }
+                    }
+
+                    div:hover {
+                        background-color: $light-blue;
+                    }
+
+                    &-one.focus,
+                    &-two.focus {
+                        background-color: $active-blue;
+                        border: 1px solid $blue-border;
+
+                    }
+                }
+            }
+        }
+
+        &-footer {
+            height: 1.55rem;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 2px;
+
+            &-leftbar {
+                margin-left: 10px;
+                font-size: .77rem;
+                display: flex;
+                align-items: center;
+            }
+
+            &-rightbar {
+                display: flex;
+                justify-content: flex-end;
+
+                img {
+                    box-sizing: content-box;
+                    height: 90%;
+                    width: 37.5%;
+                    padding: 0px 1px;
+                    object-fit: contain;
+                }
+
+                img:first-child {
+                    border: 1px solid $blue-border;
+                    background: $light-blue;
+                }
+            }
+        }
+    }
+}

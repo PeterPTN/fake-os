@@ -1,0 +1,52 @@
+@use 'imports' as *;
+
+.desktop {
+    width: 100%;
+    height: 95.65%;
+    position: relative;
+    display: flex;
+
+    &--icon {
+        padding-bottom: 1.2rem;
+        border: 1px solid transparent;
+        height: 4.1rem;
+        width: 4.35rem;
+    }
+
+    &--icon:hover {
+        border: 1px solid rgb(150, 176, 211);
+        background-color: rgba(196, 229, 241, 0.39);
+    }
+
+    &--icon.focus {
+        background-color: rgba(147, 208, 248, 0.548);
+    }
+
+    &__icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: .5rem;
+        margin-top: .25rem;
+        padding: 0 .25rem;
+        word-break: keep-all;
+        text-align: center;
+        row-gap: 1rem;
+        font-size: .72rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            padding: .1rem .15rem .45rem .15rem;
+            object-fit: contain;
+        }
+    }
+
+    &__icon-bin {}
+
+    &__icon-recycle-bin.empty {}
+
+    &__icon-calculator {}
+
+    &__icon-chrome {}
+}
