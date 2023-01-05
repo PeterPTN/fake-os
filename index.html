@@ -20,6 +20,11 @@
 
 <body>
     <div class="desktop">
+        <div class="desktop__startmenu">
+            <div class="desktop__startmenu-leftcol"></div>
+            <div class="desktop__startmenu-rightcol"></div>
+        </div>
+
         <div class="desktop__icon">
             <!-- Add Focus -->
             <div class="desktop__icon-bin desktop--icon">
@@ -338,46 +343,65 @@
 
                         <form action="" class="desktop__chrome-main-content-form">
                             <div class="desktop__chrome-main-content-form-search">
-                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-magnifying-glass close"></i>
                                 <input type="text">
                                 <i class="fa-solid fa-microphone"></i>
                                 <i class="fa-solid fa-camera"></i>
+                                <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
                         </form>
 
                         <div class="desktop__chrome-search-header-first-settings">
-                            <!-- Add settings thing -->
+                            <i class="fa-solid fa-gear"></i>
+                            <img src="./images/ninedots.png" alt="Google apps">
+                            <p>Z</p>
                         </div>
                     </div>
 
                     <div class="desktop__chrome-search-header-second">
                         <div class="desktop__chrome-search-header-second-tabs">
-                            <p>All</p>
-                            <p>Images</p>
-                            <p>News</p>
-                            <p>Videos</p>
-                            <p>Shopping</p>
-                            <p>More</p>
+                            <p><i class="fa-solid fa-magnifying-glass"></i> All</p>
+                            <p><i class="fa-regular fa-image"></i>Images</p>
+                            <p><i class="fa-regular fa-newspaper"></i>News</p>
+                            <p><i class="fa-brands fa-youtube"></i>Videos</p>
+                            <p><i class="fa-solid fa-tag"></i>Shopping</p>
+                            <p><i class="fa-solid fa-ellipsis-vertical"></i>More</p>
                             <p>Tools</p>
                         </div>
                     </div>
                 </header>
 
-                <div>
+                <div class='desktop__chrome-search-content'>
                     <p>About 0 results (0.19 seconds)</p>
-                    <h2>Did you mean: <h2 id="searchResultTitle"></h2></h2>
+                    <h2>Did you mean: <span class="desktop__chrome-search-content-suggest"
+                            id="searchResultTitle">placeholder</span></h2>
                     <p>No results containing all your search terms were found.</p>
-                    <p>Your search - <em id="searchResult"></em> - did not match any documents.</p>
+                    <p>Your search - <strong id="searchResult">placeholder</strong> - did not match any documents.</p>
                     <h3>Suggestions:</h3>
-
                     <ul>
                         <li>Make sure that all words are spelled correctly.</li>
                         <li>Try different keywords.</li>
                         <li>Try more general keywords.</li>
                     </ul>
+
+                    <img src="./images/yeti.png" alt="">
                 </div>
 
-                <img src="./images/yeti.png" alt="">
+
+                <div class="desktop__chrome-search-footer">
+                    <div class="desktop__chrome-search-footer-first">
+                        <p>Australia</p>
+                        <p>Cabramatta, Sydney</p>
+                        <p>- From your IP address - Update location</p>
+                    </div>
+
+                    <div class="desktop__chrome-search-footer-second">
+                        <p>Help</p>
+                        <p>Send feedback</p>
+                        <p>Privacy</p>
+                        <p>Terms</p>
+                    </div>
+                </div>
             </div>
 
             <!-- Chrome Search Page -->
