@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-    <script src="./scripts/scripts.js"></script>
+    <script defer src="./scripts/scripts.js" type="module"></script>
 
     <title>Windows 10</title>
 </head>
@@ -367,8 +367,8 @@
                         </div>
 
                         <div class="desktop__chrome-header-first-leftbar-tab">
-                            <img src="./images/white-chrome.png" alt="Chrome icon">
-                            <p>New Tab</p>
+                            <img id="chromeIcon" src="./images/chrome.png" alt="Chrome icon">
+                            <p id="newTab">Google</p>
                             <p>&#10005;</p>
                         </div>
 
@@ -381,8 +381,11 @@
                         </div>
                     </div>
 
-                    <div class="desktop__chrome-header-rightbar">
-
+                    <div class="desktop__chrome-header-first-rightbar">
+                        <i class="fa-solid fa-chevron-down"></i>
+                        <i class="fa-solid fa-minus"></i>
+                        <i class="fa-regular fa-window-restore"></i>
+                        <i class="fa-solid fa-xmark" id="closeChrome"></i>
                     </div>
                 </div>
 
@@ -417,83 +420,7 @@
                 </div>
             </header>
 
-            <!-- Chrome Search Result -->
-            <div class="desktop__chrome-search">
-                <header class="desktop__chrome-search-header">
-                    <div class="desktop__chrome-search-header-first">
-                        <div class="desktop__chrome-search-header-first-google">
-                            <h1>G</h1>
-                            <h1>o</h1>
-                            <h1>o</h1>
-                            <h1>g</h1>
-                            <h1>l</h1>
-                            <h1>e</h1>
-                        </div>
-
-                        <form action="" class="desktop__chrome-main-content-form">
-                            <div class="desktop__chrome-main-content-form-search">
-                                <i class="fa-solid fa-magnifying-glass close"></i>
-                                <input type="text">
-                                <i class="fa-solid fa-microphone"></i>
-                                <i class="fa-solid fa-camera"></i>
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
-                        </form>
-
-                        <div class="desktop__chrome-search-header-first-settings">
-                            <i class="fa-solid fa-gear"></i>
-                            <img src="./images/ninedots.png" alt="Google apps">
-                            <p>Z</p>
-                        </div>
-                    </div>
-
-                    <div class="desktop__chrome-search-header-second">
-                        <div class="desktop__chrome-search-header-second-tabs">
-                            <p><i class="fa-solid fa-magnifying-glass"></i> All</p>
-                            <p><i class="fa-regular fa-image"></i>Images</p>
-                            <p><i class="fa-regular fa-newspaper"></i>News</p>
-                            <p><i class="fa-brands fa-youtube"></i>Videos</p>
-                            <p><i class="fa-solid fa-tag"></i>Shopping</p>
-                            <p><i class="fa-solid fa-ellipsis-vertical"></i>More</p>
-                            <p>Tools</p>
-                        </div>
-                    </div>
-                </header>
-
-                <div class='desktop__chrome-search-content'>
-                    <p>About 0 results (0.19 seconds)</p>
-                    <h2>Did you mean: <span class="desktop__chrome-search-content-suggest"
-                            id="searchResultTitle">placeholder</span></h2>
-                    <p>No results containing all your search terms were found.</p>
-                    <p>Your search - <strong id="searchResult">placeholder</strong> - did not match any documents.</p>
-                    <h3>Suggestions:</h3>
-                    <ul>
-                        <li>Make sure that all words are spelled correctly.</li>
-                        <li>Try different keywords.</li>
-                        <li>Try more general keywords.</li>
-                    </ul>
-
-                    <img src="./images/yeti.png" alt="">
-                </div>
-
-
-                <div class="desktop__chrome-search-footer">
-                    <div class="desktop__chrome-search-footer-first">
-                        <p>Australia</p>
-                        <p>Cabramatta, Sydney</p>
-                        <p>- From your IP address - Update location</p>
-                    </div>
-
-                    <div class="desktop__chrome-search-footer-second">
-                        <p>Help</p>
-                        <p>Send feedback</p>
-                        <p>Privacy</p>
-                        <p>Terms</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Chrome Search Page -->
+            <!-- Chrome Home Page -->
             <main class="desktop__chrome-main close">
                 <div class="desktop__chrome-main-header">
                     <div class="desktop__chrome-main-header-leftbar">
@@ -522,13 +449,13 @@
                     <form action="" class="desktop__chrome-main-content-form">
                         <div class="desktop__chrome-main-content-form-search">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text">
+                            <input type="text" class="desktop__chrome-main-content-form-search-input">
                             <i class="fa-solid fa-microphone"></i>
                             <i class="fa-solid fa-camera"></i>
                         </div>
 
                         <div class="desktop__chrome-main-content-form-buttons">
-                            <button>Google Search</button>
+                            <input type="submit" value="Google Search"></input>
                             <button>I'm Feeling Lucky</button>
                         </div>
                     </form>
@@ -554,6 +481,80 @@
                     </div>
                 </div>
             </main>
+
+            <!-- Chrome Search Result -->
+            <div class="desktop__chrome-search open">
+                <header class="desktop__chrome-search-header">
+                    <div class="desktop__chrome-search-header-first">
+                        <div class="desktop__chrome-search-header-first-google">
+                            <h1>G</h1>
+                            <h1>o</h1>
+                            <h1>o</h1>
+                            <h1>g</h1>
+                            <h1>l</h1>
+                            <h1>e</h1>
+                        </div>
+
+                        <form class="desktop__chrome-search-header-first-form">
+                            <!-- Close Toggle -->
+                            <input type="text" class="desktop__chrome-search-header-first-form-input">
+                            <i class="fa-solid fa-microphone"></i>
+                            <i class="fa-solid fa-camera"></i>
+                            <i class="fa-solid fa-magnifying-glass" id="searchButton"></i>
+                        </form>
+
+                        <div class="desktop__chrome-search-header-first-settings">
+                            <i class="fa-solid fa-gear"></i>
+                            <img src="./images/ninedots.png" alt="Google apps">
+                            <p>Z</p>
+                        </div>
+                    </div>
+
+                    <div class="desktop__chrome-search-header-second">
+                        <div class="desktop__chrome-search-header-second-tabs">
+                            <p><i class="fa-solid fa-magnifying-glass"></i> All</p>
+                            <p><i class="fa-regular fa-image"></i>Images</p>
+                            <p><i class="fa-regular fa-newspaper"></i>News</p>
+                            <p><i class="fa-brands fa-youtube"></i>Videos</p>
+                            <p><i class="fa-solid fa-tag"></i>Shopping</p>
+                            <p><i class="fa-solid fa-ellipsis-vertical"></i>More</p>
+                            <p>Tools</p>
+                        </div>
+                    </div>
+                </header>
+
+                <div class='desktop__chrome-search-content'>
+                    <p>About 0 results (<span id="latency"></span>)</p>
+                    <h2>Did you mean: <em class="desktop__chrome-search-content-suggest"
+                            id="searchResultTitle"></em></h2>
+                    <p>No results containing all your search terms were found.</p>
+                    <p>Your search - <strong id="searchResult"></strong> - did not match any documents.</p>
+                    <h3>Suggestions:</h3>
+                    <ul>
+                        <li>Make sure that all words are spelled correctly.</li>
+                        <li>Try different keywords.</li>
+                        <li>Try more general keywords.</li>
+                    </ul>
+
+                    <img src="./images/yeti.png" alt="">
+                </div>
+
+
+                <div class="desktop__chrome-search-footer">
+                    <div class="desktop__chrome-search-footer-first">
+                        <p>Australia</p>
+                        <p>Cabramatta, Sydney</p>
+                        <p>- From your IP address - Update location</p>
+                    </div>
+
+                    <div class="desktop__chrome-search-footer-second">
+                        <p>Help</p>
+                        <p>Send feedback</p>
+                        <p>Privacy</p>
+                        <p>Terms</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 
@@ -590,7 +591,5 @@
         </div>
     </div>
 </body>
-
-<script src="./scripts/scripts.js"></script>
 
 </html>

@@ -162,20 +162,26 @@
   background-color: rgb(168, 69, 69);
 }
 
+.desktop__chrome.close {
+  opacity: 0;
+  transform: scale(0.1);
+}
 .desktop__chrome {
   position: absolute;
   background-color: white;
   width: 100%;
   height: 100%;
+  transition: opacity 0.15s, transform 1.5s;
 }
 .desktop__chrome-header {
   display: flex;
   flex-direction: column;
   background-color: black;
-  padding-top: 3.5px;
 }
 .desktop__chrome-header-first {
   color: white;
+  display: flex;
+  justify-content: space-between;
 }
 .desktop__chrome-header-first-leftbar {
   display: flex;
@@ -222,15 +228,28 @@
   border-top-right-radius: 0.5rem;
   font-size: 0.75rem;
 }
-.desktop__chrome-header-first-leftbar-tab img {
-  height: 1rem;
+.desktop__chrome-header-first-leftbar-tab #chromeIcon {
+  height: 0.9rem;
+  border-radius: 100%;
+  outline: 2px solid white;
+}
+.desktop__chrome-header-first-leftbar-tab #chromeIcon.spin {
+  outline-color: transparent;
+  animation: 2s linear infinite spin;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(360deg);
+  }
 }
 .desktop__chrome-header-first-leftbar-tab p:last-child {
   margin-left: auto;
   border-radius: 100%;
-  padding: 0 1.75px;
+  outline: 2.5px solid transparent;
+  line-height: 1;
 }
 .desktop__chrome-header-first-leftbar-tab P:last-child:hover {
+  outline-color: rgb(90, 90, 90);
   background-color: rgb(90, 90, 90);
 }
 .desktop__chrome-header-first-leftbar-newtab {
@@ -244,11 +263,34 @@
   text-align: center;
   background-color: black;
   border-radius: 100%;
-  padding: 0 8px 4px;
+  padding: 0 8px 3px;
   transition: all 0.15s;
 }
 .desktop__chrome-header-first-leftbar-newtab p:hover {
   background-color: rgb(48, 44, 44);
+}
+.desktop__chrome-header-first-rightbar {
+  display: flex;
+  align-items: stretch;
+  padding-bottom: 3.5px;
+}
+.desktop__chrome-header-first-rightbar i {
+  display: flex;
+  align-items: center;
+  padding: 0 1.1rem;
+  font-size: 0.7rem;
+  transition: all 0.25s;
+  color: rgba(128, 128, 128, 0.849);
+}
+.desktop__chrome-header-first-rightbar i:last-child {
+  font-size: 1rem;
+}
+.desktop__chrome-header-first-rightbar i:last-child:hover {
+  background-color: rgb(216, 3, 3);
+}
+.desktop__chrome-header-first-rightbar i:hover {
+  background-color: rgba(63, 63, 63, 0.4);
+  color: rgb(250, 250, 250);
 }
 .desktop__chrome-header-second {
   display: flex;
@@ -272,6 +314,13 @@
 }
 .desktop__chrome-header-second-leftbar i {
   font-size: 0.85rem;
+  border-radius: 100%;
+  box-sizing: content-box;
+  outline: 6px solid transparent;
+}
+.desktop__chrome-header-second-leftbar i:hover {
+  transition: all 0.25s;
+  outline-color: rgba(128, 128, 128, 0.375);
 }
 .desktop__chrome-header-second-centerbar {
   flex: 10;
@@ -318,7 +367,7 @@
   background-color: palevioletred;
   border-radius: 100%;
   font-size: 0.85rem;
-  padding: 1.75px 7.5px;
+  padding: 1.75px 7.5px 2px 7px;
   outline: 2px solid transparent;
 }
 .desktop__chrome-header-second-rightbar img {
@@ -333,9 +382,12 @@
   border-radius: 100%;
   box-sizing: content-box;
 }
-.desktop__chrome-header-second-rightbar :is(img:hover, i:hover, p:hover) {
+.desktop__chrome-header-second-rightbar :is(img:hover, i:hover) {
   transition: all 0.25s;
   background-color: rgba(128, 128, 128, 0.375);
+}
+.desktop__chrome-header-second-rightbar p:hover {
+  outline-color: rgba(128, 128, 128, 0.375);
 }
 .desktop__chrome-main.close {
   display: none;
@@ -466,7 +518,7 @@
   column-gap: 0.75rem;
   margin-top: 1.5rem;
 }
-.desktop__chrome-main-content-form-buttons button {
+.desktop__chrome-main-content-form-buttons :is(button, input) {
   border: 1px solid transparent;
   border-radius: 3px;
   background-color: rgb(250, 250, 250);
@@ -474,7 +526,7 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
-.desktop__chrome-main-content-form-buttons button:hover {
+.desktop__chrome-main-content-form-buttons :is(button:hover, input:hover) {
   border-color: rgb(226, 226, 226);
   box-shadow: 0rem 1px 1px rgb(226, 226, 226);
 }
@@ -512,10 +564,14 @@
   display: flex;
   justify-content: flex-end;
 }
+.desktop__chrome-search.open {
+  display: flex;
+}
 .desktop__chrome-search {
   height: 91.2%;
   display: flex;
   flex-direction: column;
+  display: none;
 }
 .desktop__chrome-search-header {
   display: flex;
@@ -537,6 +593,9 @@
 .desktop__chrome-search-header-first-google {
   display: flex;
 }
+.desktop__chrome-search-header-first-google h1 {
+  cursor: pointer;
+}
 .desktop__chrome-search-header-first-google h1:nth-child(1) {
   position: relative;
   color: #4285F4;
@@ -557,6 +616,31 @@
 }
 .desktop__chrome-search-header-first-google h1:nth-child(6) {
   color: #EA4335;
+}
+.desktop__chrome-search-header-first-form {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(211, 211, 211, 0.5);
+  border-radius: 2rem;
+  padding: 0.35rem 0.5rem;
+  display: flex;
+}
+.desktop__chrome-search-header-first-form i {
+  display: flex;
+  align-items: center;
+  color: rgb(179, 179, 179);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+}
+.desktop__chrome-search-header-first-form input {
+  width: 26.5rem;
+  padding: 0.35rem 0;
+  border: none;
+  cursor: text;
+}
+.desktop__chrome-search-header-first-form input:focus {
+  outline: transparent;
 }
 .desktop__chrome-search-header-first-settings {
   display: flex;
@@ -649,14 +733,18 @@
   color: rgb(8, 8, 179);
   font-weight: bold;
 }
+.desktop__chrome-search-content-suggest:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 .desktop__chrome-search-content li {
   list-style-type: disc;
   margin-left: 1.5rem;
 }
 .desktop__chrome-search-content img {
   position: absolute;
-  width: 20rem;
-  bottom: 8rem;
+  width: 22rem;
+  bottom: 10rem;
   left: 17.5rem;
   cursor: pointer;
 }
@@ -1315,7 +1403,7 @@
 .taskbar--blur {
   background-image: url("../images/wallpaper.jpg");
   background-position: 100% 87%;
-  filter: blur(10px);
+  filter: blur(7.5px);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;

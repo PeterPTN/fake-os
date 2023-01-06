@@ -16,3 +16,26 @@ $google-padding-left: 12vw;
 
 $footer-background-color: rgb(242, 242, 242);
 $footer-border-color: rgb(218, 220, 224);
+
+@mixin form {
+    border: 1px solid $grey;
+    border-radius: 2rem;
+    padding: .35rem .5rem;
+    display: flex;
+}
+
+@mixin form-svg {
+    display: flex;
+    align-items: center;
+    color: rgb(179, 179, 179);
+    font-size: .85rem;
+    cursor: pointer;
+    padding: 0 .5rem;
+}
+
+@mixin form-input {
+    width: 26.5rem;
+    padding: .35rem 0;
+    border: none;
+    cursor: text;
+}
