@@ -166,12 +166,97 @@
   opacity: 0;
   transform: scale(0.1);
 }
+.desktop__chrome.resize {
+  width: 1000px;
+  height: 700px;
+  transition: all 0.015s;
+  z-index: 100;
+}
+.desktop__chrome-background {
+  width: calc(100% + 5px);
+  height: calc(100% + 5px);
+  position: absolute;
+  box-sizing: content-box;
+  left: -2.5px;
+  top: -2.5px;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+}
+.desktop__chrome-background div {
+  box-sizing: content-box;
+}
+.desktop__chrome-background-toprow {
+  display: flex;
+  height: 1%;
+}
+.desktop__chrome-background-toprow :is(div:first-child, div:last-child) {
+  flex: 1;
+}
+.desktop__chrome-background-toprow div:first-child {
+  cursor: nw-resize;
+  border-top: 2px solid red;
+  border-left: 2px solid red;
+}
+.desktop__chrome-background-toprow div:last-child {
+  cursor: ne-resize;
+  border-top: 2px solid red;
+  border-right: 2px solid red;
+}
+.desktop__chrome-background-toprow div:nth-child(2) {
+  flex: 1 1 98.5%;
+  cursor: n-resize;
+  border-top: 2px solid red;
+}
+.desktop__chrome-background-midrow {
+  height: 98%;
+  width: 100%;
+  display: flex;
+}
+.desktop__chrome-background-midrow div {
+  flex: 1;
+}
+.desktop__chrome-background-midrow div:first-child {
+  cursor: w-resize;
+  border-left: 2px solid red;
+}
+.desktop__chrome-background-midrow div:last-child {
+  cursor: e-resize;
+  border-right: 2px solid red;
+}
+.desktop__chrome-background-botrow {
+  display: flex;
+  height: 1%;
+}
+.desktop__chrome-background-botrow :is(div:first-child, div:last-child) {
+  flex: 1;
+}
+.desktop__chrome-background-botrow div:first-child {
+  cursor: sw-resize;
+  border-bottom: 2px solid red;
+  border-left: 2px solid red;
+}
+.desktop__chrome-background-botrow div:last-child {
+  cursor: se-resize;
+  border-right: 2px solid red;
+  border-bottom: 2px solid red;
+}
+.desktop__chrome-background-botrow div:nth-child(2) {
+  flex: 1 1 98.5%;
+  cursor: n-resize;
+  border-bottom: 2px solid red;
+}
 .desktop__chrome {
   position: absolute;
   background-color: white;
-  width: 100%;
-  height: 100%;
   transition: opacity 0.1s, transform 1.5s;
+  overflow-y: auto;
+  overflow-x: auto;
+  height: 100%;
+  width: 100%;
+}
+.desktop__chrome-header.resize {
+  padding-top: 0.5rem;
 }
 .desktop__chrome-header {
   display: flex;
@@ -413,7 +498,7 @@
 .desktop__chrome-main {
   display: flex;
   flex-direction: column;
-  height: 91.2%;
+  height: 92%;
 }
 .desktop__chrome-main-header {
   display: flex;
@@ -462,7 +547,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto 0;
+  height: 100%;
+  margin-top: 7.5rem;
 }
 .desktop__chrome-main-content-google {
   display: flex;
@@ -549,7 +635,10 @@
   box-shadow: 0rem 1px 1px rgb(226, 226, 226);
 }
 .desktop__chrome-main-footer {
-  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
 }
 .desktop__chrome-main-footer-first, .desktop__chrome-main-footer-second {
   background-color: rgb(242, 242, 242);
@@ -586,9 +675,10 @@
   display: flex;
 }
 .desktop__chrome-search {
-  height: 91.2%;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  overflow-x: auto;
   display: none;
 }
 .desktop__chrome-search-header {
@@ -767,20 +857,20 @@
   margin-left: 1.5rem;
 }
 .desktop__chrome-search-content img {
-  position: absolute;
+  position: relative;
   width: 22rem;
-  bottom: 10rem;
-  left: 17.5rem;
+  margin: 2rem 0 1rem;
   cursor: pointer;
 }
 .desktop__chrome-search-footer {
   display: flex;
   flex-direction: column;
-  margin-top: auto;
   background-color: rgb(242, 242, 242);
   color: rgb(112, 117, 122);
   line-height: 3.5;
   font-size: 0.85rem;
+  width: 99.9%;
+  align-self: center;
 }
 .desktop__chrome-search-footer-first {
   display: flex;
