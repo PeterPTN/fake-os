@@ -162,12 +162,13 @@ export default function chromeScripts() {
     function shiftHistory(e) {
         const currentIndex = chromeHistory.indexOf(currentHistory);
         const storedLatency = getLatency();
-        spinSpinner(storedLatency);
-
+        
         if (chromeBack.classList.contains("highlight") && e.target.id === "chromeBack") {
+            spinSpinner(storedLatency);
             currentHistory = chromeHistory[currentIndex - 1];
             setPage(storedLatency);
         } else if (chromeForward.classList.contains("highlight") && e.target.id === "chromeForward") {
+            spinSpinner(storedLatency);
             currentHistory = chromeHistory[currentIndex + 1];
             setPage(storedLatency);
         }
