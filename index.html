@@ -384,17 +384,22 @@
                     <div class="desktop__chrome-header-first-rightbar">
                         <i class="fa-solid fa-chevron-down"></i>
                         <i class="fa-solid fa-minus"></i>
-                        <i class="fa-regular fa-window-restore"></i>
+                        <i class="fa-regular fa-window-restore" id="minimiseChrome"></i>
                         <i class="fa-solid fa-xmark" id="closeChrome"></i>
                     </div>
                 </div>
 
                 <div class="desktop__chrome-header-second">
                     <div class="desktop__chrome-header-second-leftbar">
-                        <p> &#129120;</p>
-                        <p>&#129122;</p>
-                        <i class="fa-sharp fa-solid fa-rotate-right"></i>
-                        <i class="fa-solid fa-house"></i>
+                        <div class="desktop__chrome-header-second-leftbar-arrows">
+                            <p id="chromeBack">&#129120;</p>
+                            <p id="chromeForward">&#129122;</p>
+                        </div>
+
+                        <div class="desktop__chrome-header-second-leftbar-icons">
+                            <i class="fa-sharp fa-solid fa-rotate-right" id="chromeRefresh"></i>
+                            <i class="fa-solid fa-house" id="chromeHome"></i>
+                        </div>
                     </div>
 
                     <!-- on click outline -->
@@ -421,7 +426,7 @@
             </header>
 
             <!-- Chrome Home Page -->
-            <main class="desktop__chrome-main close">
+            <main class="desktop__chrome-main">
                 <div class="desktop__chrome-main-header">
                     <div class="desktop__chrome-main-header-leftbar">
                         <p>About</p>
@@ -483,7 +488,7 @@
             </main>
 
             <!-- Chrome Search Result -->
-            <div class="desktop__chrome-search open">
+            <div class="desktop__chrome-search">
                 <header class="desktop__chrome-search-header">
                     <div class="desktop__chrome-search-header-first">
                         <div class="desktop__chrome-search-header-first-google">
@@ -525,8 +530,8 @@
 
                 <div class='desktop__chrome-search-content'>
                     <p>About 0 results (<span id="latency"></span>)</p>
-                    <h2>Did you mean: <em class="desktop__chrome-search-content-suggest"
-                            id="searchResultTitle"></em></h2>
+                    <h2>Did you mean: <em class="desktop__chrome-search-content-suggest" id="searchResultTitle"></em>
+                    </h2>
                     <p>No results containing all your search terms were found.</p>
                     <p>Your search - <strong id="searchResult"></strong> - did not match any documents.</p>
                     <h3>Suggestions:</h3>

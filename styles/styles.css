@@ -171,7 +171,7 @@
   background-color: white;
   width: 100%;
   height: 100%;
-  transition: opacity 0.15s, transform 1.5s;
+  transition: opacity 0.1s, transform 1.5s;
 }
 .desktop__chrome-header {
   display: flex;
@@ -303,27 +303,45 @@
   flex: 0.75;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  column-gap: 0.5rem;
-  padding-right: 1rem;
+  justify-content: center;
+  flex: 1 1 8rem;
 }
-.desktop__chrome-header-second-leftbar p {
+.desktop__chrome-header-second-leftbar-arrows {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}
+.desktop__chrome-header-second-leftbar-arrows p {
   color: grey;
   position: relative;
   bottom: 1px;
+  border-radius: 100%;
+  padding: 2px 6px;
 }
-.desktop__chrome-header-second-leftbar i {
+.desktop__chrome-header-second-leftbar-arrows p.highlight {
+  color: rgb(250, 250, 250);
+}
+.desktop__chrome-header-second-leftbar-arrows P.highlight:hover {
+  transition: all 0.15s;
+  background-color: rgba(168, 168, 168, 0.37);
+}
+.desktop__chrome-header-second-leftbar-icons {
+  flex: 1;
+  display: flex;
+  justify-content: space-around;
+}
+.desktop__chrome-header-second-leftbar-icons i {
   font-size: 0.85rem;
   border-radius: 100%;
   box-sizing: content-box;
-  outline: 6px solid transparent;
+  padding: 6.5px;
 }
-.desktop__chrome-header-second-leftbar i:hover {
+.desktop__chrome-header-second-leftbar-icons i:hover {
   transition: all 0.25s;
-  outline-color: rgba(128, 128, 128, 0.375);
+  background-color: rgba(128, 128, 128, 0.375);
 }
 .desktop__chrome-header-second-centerbar {
-  flex: 10;
+  flex: 10 1 80vw;
   display: flex;
   justify-content: space-between;
   border-radius: 2rem;
@@ -677,6 +695,9 @@
 .desktop__chrome-search-header-first-settings p:hover {
   outline: 3px solid rgba(214, 214, 214, 0.6);
 }
+.desktop__chrome-search-header-second.blink {
+  display: none;
+}
 .desktop__chrome-search-header-second {
   display: flex;
   border-bottom: 1px solid rgba(128, 128, 128, 0.164);
@@ -687,6 +708,7 @@
   column-gap: 1rem;
   width: 35rem;
   font-size: 0.8rem;
+  justify-content: space-between;
 }
 .desktop__chrome-search-header-second-tabs p,
 .desktop__chrome-search-header-second-tabs i {
@@ -705,6 +727,9 @@
 }
 .desktop__chrome-search-header-second-tabs p:last-child {
   margin-left: auto;
+}
+.desktop__chrome-search-content.blink {
+  display: none;
 }
 .desktop__chrome-search-content {
   display: flex;
