@@ -4,6 +4,8 @@ This is a SPA that aims to mimic a Windows 10 OS in terms of UI/UX. It's made wi
 
 (Currently about 50% complete in overall functionality - Completion date TBD).
 
+Deployed here: https://peterptn.github.io/fakeOS/;
+
 ## Chrome App
 
 - Matches design
