@@ -1,4 +1,4 @@
-### FakeOS
+# FakeOS
 
 This is a SPA that aims to mimic a Windows 10 OS in terms of UI/UX. It's made with HTML, SCSS and JS. 
 
