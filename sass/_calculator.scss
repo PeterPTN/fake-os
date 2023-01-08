@@ -7,6 +7,14 @@
         border: 1px solid red;
     }
 
+    &__calculator.closeAnimation {
+        transition: opacity .15s, transform 1.5s;
+    }
+
+    &__calculator.openAnimation {
+        transition: opacity .35s, transform .15s;
+    }
+
     &__calculator {
         background-color: rgb(245, 245, 245);
         height: fit-content;
@@ -15,9 +23,6 @@
         position: absolute;
         left: 20%;
         top: 15%;
-
-        // Debugging
-        display: none;
 
         &-header {
             display: flex;

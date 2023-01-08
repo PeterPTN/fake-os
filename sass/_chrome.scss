@@ -3,29 +3,37 @@
 .desktop {
     // Chrome App
 
-    &__chrome.close {
-        opacity: 0;
-        transform: scale(.1);
+    &__chrome.openAnimation {
+        transition: opacity .15s, transform .15s;
     }
 
     &__chrome.resize {
         width: 1000px;
         height: 700px;
-        transition: all .015s;
         z-index: 100;
+    }
+
+    &__chrome-background.resize {
+        width: 1004px;
+        height: 704px;
+        z-index: 100;
+    }
+
+    &__chrome-background.unfocus {
+        * {
+            border-color: rgba(48, 48, 48, 0.473);
+        }
     }
 
     // Background resizer
     &__chrome-background {
-        width: calc(100% + 5px);
-        height: calc(100% + 5px);
         position: absolute;
         box-sizing: content-box;
-        left: -2.5px;
-        top: -2.5px;
         z-index: -1;
         display: flex;
         flex-direction: column;
+        left: -2px;
+        top: -2px;
 
         div {
             box-sizing: content-box;
@@ -39,22 +47,22 @@
                 flex: 1;
             }
 
-            div:first-child {
+            & :where(div:first-child) {
                 cursor: nw-resize;
-                border-top: 2px solid red;
-                border-left: 2px solid red;
+                border-top: 2px solid rgba(255, 0, 0, 0.5);
+                border-left: 2px solid rgba(255, 0, 0, 0.5);
             }
 
-            div:last-child {
+            & :where(div:last-child) {
                 cursor: ne-resize;
-                border-top: 2px solid red;
-                border-right: 2px solid red;
+                border-top: 2px solid rgba(255, 0, 0, 0.5);
+                border-right: 2px solid rgba(255, 0, 0, 0.5);
             }
 
-            div:nth-child(2) {
+            & :where(div:nth-child(2)) {
                 flex: 1 1 98.5%;
                 cursor: n-resize;
-                border-top: 2px solid red;
+                border-top: 2px solid rgba(255, 0, 0, 0.5);
             }
         }
 
@@ -67,14 +75,14 @@
                 flex: 1;
             }
 
-            div:first-child {
+            & :where(div:first-child) {
                 cursor: w-resize;
-                border-left: 2px solid red;
+                border-left: 2px solid rgba(255, 0, 0, 0.5);
             }
 
-            div:last-child {
+            & :where(div:last-child) {
                 cursor: e-resize;
-                border-right: 2px solid red;
+                border-right: 2px solid rgba(255, 0, 0, 0.5);
             }
         }
 
@@ -86,22 +94,22 @@
                 flex: 1;
             }
 
-            div:first-child {
+            & :where(div:first-child) {
                 cursor: sw-resize;
-                border-bottom: 2px solid red;
-                border-left: 2px solid red;
+                border-bottom: 2px solid rgba(255, 0, 0, 0.5);
+                border-left: 2px solid rgba(255, 0, 0, 0.5);
             }
 
-            div:last-child {
+            & :where(div:last-child) {
                 cursor: se-resize;
-                border-right: 2px solid red;
-                border-bottom: 2px solid red;
+                border-right: 2px solid rgba(255, 0, 0, 0.5);
+                border-bottom: 2px solid rgba(255, 0, 0, 0.5);
             }
 
-            div:nth-child(2) {
+            & :where(div:nth-child(2)) {
                 flex: 1 1 98.5%;
                 cursor: n-resize;
-                border-bottom: 2px solid red;
+                border-bottom: 2px solid rgba(255, 0, 0, 0.5);
             }
         }
     }
@@ -109,14 +117,12 @@
     &__chrome {
         position: absolute;
         background-color: white;
-        transition: opacity .1s, transform 1.5s;
         overflow-y: auto;
         overflow-x: auto;
         height: 100%;
         width: 100%;
+        z-index: 2;
 
-        // Debugging
-        // display: none;
         &-header.resize {
             padding-top: .5rem;
         }
@@ -583,7 +589,7 @@
                 display: flex;
                 flex-direction: column;
                 align-self: stretch;
-                
+
                 &-first,
                 &-second {
                     background-color: $footer-background-color;
@@ -814,7 +820,7 @@
                 padding: .75rem 0;
                 padding-left: $google-padding-left;
                 font-size: .9rem;
-                
+
                 * {
                     cursor: text;
                 }

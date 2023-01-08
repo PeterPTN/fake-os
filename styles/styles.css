@@ -3,6 +3,12 @@
 .desktop__calculator.focus {
   border: 1px solid red;
 }
+.desktop__calculator.closeAnimation {
+  transition: opacity 0.15s, transform 1.5s;
+}
+.desktop__calculator.openAnimation {
+  transition: opacity 0.35s, transform 0.15s;
+}
 .desktop__calculator {
   background-color: rgb(245, 245, 245);
   height: fit-content;
@@ -11,7 +17,6 @@
   position: absolute;
   left: 20%;
   top: 15%;
-  display: none;
 }
 .desktop__calculator-header {
   display: flex;
@@ -162,26 +167,30 @@
   background-color: rgb(168, 69, 69);
 }
 
-.desktop__chrome.close {
-  opacity: 0;
-  transform: scale(0.1);
+.desktop__chrome.openAnimation {
+  transition: opacity 0.15s, transform 0.15s;
 }
 .desktop__chrome.resize {
   width: 1000px;
   height: 700px;
-  transition: all 0.015s;
   z-index: 100;
 }
+.desktop__chrome-background.resize {
+  width: 1004px;
+  height: 704px;
+  z-index: 100;
+}
+.desktop__chrome-background.unfocus * {
+  border-color: rgba(48, 48, 48, 0.473);
+}
 .desktop__chrome-background {
-  width: calc(100% + 5px);
-  height: calc(100% + 5px);
   position: absolute;
   box-sizing: content-box;
-  left: -2.5px;
-  top: -2.5px;
   z-index: -1;
   display: flex;
   flex-direction: column;
+  left: -2px;
+  top: -2px;
 }
 .desktop__chrome-background div {
   box-sizing: content-box;
@@ -193,20 +202,20 @@
 .desktop__chrome-background-toprow :is(div:first-child, div:last-child) {
   flex: 1;
 }
-.desktop__chrome-background-toprow div:first-child {
+.desktop__chrome-background-toprow :where(div:first-child) {
   cursor: nw-resize;
-  border-top: 2px solid red;
-  border-left: 2px solid red;
+  border-top: 2px solid rgba(255, 0, 0, 0.5);
+  border-left: 2px solid rgba(255, 0, 0, 0.5);
 }
-.desktop__chrome-background-toprow div:last-child {
+.desktop__chrome-background-toprow :where(div:last-child) {
   cursor: ne-resize;
-  border-top: 2px solid red;
-  border-right: 2px solid red;
+  border-top: 2px solid rgba(255, 0, 0, 0.5);
+  border-right: 2px solid rgba(255, 0, 0, 0.5);
 }
-.desktop__chrome-background-toprow div:nth-child(2) {
+.desktop__chrome-background-toprow :where(div:nth-child(2)) {
   flex: 1 1 98.5%;
   cursor: n-resize;
-  border-top: 2px solid red;
+  border-top: 2px solid rgba(255, 0, 0, 0.5);
 }
 .desktop__chrome-background-midrow {
   height: 98%;
@@ -216,13 +225,13 @@
 .desktop__chrome-background-midrow div {
   flex: 1;
 }
-.desktop__chrome-background-midrow div:first-child {
+.desktop__chrome-background-midrow :where(div:first-child) {
   cursor: w-resize;
-  border-left: 2px solid red;
+  border-left: 2px solid rgba(255, 0, 0, 0.5);
 }
-.desktop__chrome-background-midrow div:last-child {
+.desktop__chrome-background-midrow :where(div:last-child) {
   cursor: e-resize;
-  border-right: 2px solid red;
+  border-right: 2px solid rgba(255, 0, 0, 0.5);
 }
 .desktop__chrome-background-botrow {
   display: flex;
@@ -231,29 +240,29 @@
 .desktop__chrome-background-botrow :is(div:first-child, div:last-child) {
   flex: 1;
 }
-.desktop__chrome-background-botrow div:first-child {
+.desktop__chrome-background-botrow :where(div:first-child) {
   cursor: sw-resize;
-  border-bottom: 2px solid red;
-  border-left: 2px solid red;
+  border-bottom: 2px solid rgba(255, 0, 0, 0.5);
+  border-left: 2px solid rgba(255, 0, 0, 0.5);
 }
-.desktop__chrome-background-botrow div:last-child {
+.desktop__chrome-background-botrow :where(div:last-child) {
   cursor: se-resize;
-  border-right: 2px solid red;
-  border-bottom: 2px solid red;
+  border-right: 2px solid rgba(255, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(255, 0, 0, 0.5);
 }
-.desktop__chrome-background-botrow div:nth-child(2) {
+.desktop__chrome-background-botrow :where(div:nth-child(2)) {
   flex: 1 1 98.5%;
   cursor: n-resize;
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid rgba(255, 0, 0, 0.5);
 }
 .desktop__chrome {
   position: absolute;
   background-color: white;
-  transition: opacity 0.1s, transform 1.5s;
   overflow-y: auto;
   overflow-x: auto;
   height: 100%;
   width: 100%;
+  z-index: 2;
 }
 .desktop__chrome-header.resize {
   padding-top: 0.5rem;
@@ -924,6 +933,8 @@
   border: 1px solid transparent;
   height: 4.1rem;
   width: 4.35rem;
+  position: relative;
+  z-index: 1;
 }
 .desktop--icon:hover {
   border: 1px solid rgb(150, 176, 211);
@@ -964,7 +975,7 @@
   position: relative;
   top: 10rem;
   margin: 0 auto;
-  display: none;
+  transition: opacity 0.15s, transform 0.15s;
 }
 .desktop__bin-header {
   display: flex;
@@ -1426,8 +1437,8 @@
   background: rgba(200, 223, 238, 0.486);
 }
 
-.desktop__startmenu.open {
-  display: flex;
+.desktop__startmenu.openAnimation {
+  transition: height 0.15s, transform 0.15s, opacity 0.15s;
 }
 .desktop__startmenu {
   position: absolute;
@@ -1440,7 +1451,8 @@
   display: flex;
   column-gap: 1rem;
   color: rgb(245, 245, 245);
-  display: none;
+  display: flex;
+  box-shadow: 0px 0px 0.5rem rgba(0, 0, 0, 0.301);
 }
 .desktop__startmenu-leftcol {
   display: flex;
@@ -1490,7 +1502,7 @@
   padding-left: 0.5rem;
 }
 .desktop__startmenu-rightcol img {
-  height: 1.75rem;
+  height: 1.65rem;
   margin-right: 5px;
 }
 .desktop__startmenu-rightcol p {
@@ -1540,13 +1552,15 @@
   width: fit-content;
   display: flex;
 }
-.taskbar__left-windows.open {
-  background-color: grey;
-}
 .taskbar__left-windows {
   color: white;
 }
 .taskbar__left-windows i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
   font-size: 1.1rem;
 }
 .taskbar__left-windows:hover {
@@ -1567,18 +1581,14 @@
   height: 100%;
   display: flex;
 }
-.taskbar__left-active-chrome {
-  padding: 0.525rem;
-}
 .taskbar__left-active-chrome img {
+  padding: 0.525rem;
   object-fit: contain;
   width: 100%;
   height: 100%;
 }
-.taskbar__left-active-calculator {
-  padding: 0.425rem;
-}
 .taskbar__left-active-calculator img {
+  padding: 0.425rem;
   object-fit: contain;
   width: 100%;
   height: 100%;
@@ -1621,6 +1631,17 @@
   display: none !important;
 }
 
+.opening {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.start-opening {
+  opacity: 0;
+  height: 30rem;
+  transform: scale(0.95);
+}
+
 /* Single line truncate */
 .truncate {
   white-space: nowrap;
@@ -1648,6 +1669,7 @@
 body {
   background-image: url("../images/wallpaper.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   overflow: hidden;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

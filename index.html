@@ -24,7 +24,7 @@
         <!-- Start menu expand out right width:fitcontent -->
 
         <!-- Toggle open -->
-        <div class="desktop__startmenu">
+        <div class="desktop__startmenu hidden start-opening">
             <div class="desktop__startmenu-leftcol">
                 <li>
                     <i class="fa-solid fa-bars"></i>
@@ -66,25 +66,14 @@
                 <p><img src="./images/file.png" /> Placeholder</p>
                 <p class="desktop__startmenu-rightcol-letter">A</p>
                 <p><img src="./images/file.png" /> Placeholder</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
                 <p class="desktop__startmenu-rightcol-letter">B</p>
                 <p><img src="./images/file.png" /> Placeholder</p>
                 <p><img src="./images/file.png" /> Placeholder</p>
                 <p><img src="./images/file.png" /> Placeholder</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
                 <p class="desktop__startmenu-rightcol-letter">C</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
+                <p><img src="./images/calculator.png" /> Calculator</p>
+                <p><img src="./images/chrome.png" /> Chrome</p>
                 <p class="desktop__startmenu-rightcol-letter">D</p>
-                <p><img src="./images/file.png" /> Placeholder</p>
                 <p><img src="./images/file.png" /> Placeholder</p>
                 <p><img src="./images/file.png" /> Placeholder</p>
                 <p><img src="./images/file.png" /> Placeholder</p>
@@ -134,8 +123,8 @@
             </div>
         </div>
 
-
-        <div class="desktop__bin">
+        <!-- Bin -->
+        <div class="desktop__bin hidden opening openAnimation">
             <header class="desktop__bin-header">
                 <div class="desktop__bin-header-first">
                     <div class="desktop__bin-header-first-leftbar">
@@ -159,7 +148,7 @@
                     <div class="desktop__bin-header-first-rightbar">
                         <i class="fa-solid fa-minus"></i>
                         <i class="fa-regular fa-square-full"></i>
-                        <i class="fa-solid fa-xmark"></i>
+                        <i id="binClose" class="fa-solid fa-xmark"></i>
                     </div>
                 </div>
 
@@ -280,7 +269,7 @@
         </div>
 
         <!-- Calculator -->
-        <section class="desktop__calculator">
+        <section class="desktop__calculator hidden opening openAnimation">
             <header class="desktop__calculator-header">
                 <div class="desktop__calculator-header-first">
                     <div class="desktop__calculator-header-first-leftbar">
@@ -291,7 +280,7 @@
                     <div class="desktop__calculator-header-first-rightbar">
                         <i class="fa-solid fa-minus"></i>
                         <i class="fa-regular fa-square-full"></i>
-                        <p>&#10005;</p>
+                        <p id="calculatorClose">&#10005;</p>
                     </div>
                 </div>
 
@@ -357,27 +346,28 @@
             </main>
         </section>
 
-        <div class="desktop__chrome-background hidden resize">
+        <!-- Chrome Resizer -->
+        <div class="desktop__chrome-background hidden unfocus">
             <div class="desktop__chrome-background-toprow">
-                <div id="nwResize"></div>
-                <div id="topResize"></div>
-                <div id="neResize"></div>
+                <div class="chrome" id="nwResize"></div>
+                <div class="chrome" id="topResize"></div>
+                <div class="chrome" id="neResize"></div>
             </div>
 
             <div class="desktop__chrome-background-midrow">
-                <div id="leftResize"></div>
-                <div id="rightResize"></div>
+                <div class="chrome" id="leftResize"></div>
+                <div class="chrome" id="rightResize"></div>
             </div>
 
             <div class="desktop__chrome-background-botrow">
-                <div id="swResize"></div>
-                <div id="bottomResize"></div>
-                <div id="seResize"></div>
+                <div class="chrome" id="swResize"></div>
+                <div class="chrome" id="bottomResize"></div>
+                <div class="chrome" id="seResize"></div>
             </div>
         </div>
 
         <!-- Chrome -->
-        <section class="desktop__chrome draggable">
+        <section class="desktop__chrome draggable opening hidden">
             <header class="desktop__chrome-header">
                 <div class="desktop__chrome-header-first">
                     <div class="desktop__chrome-header-first-leftbar">
@@ -403,7 +393,7 @@
                     <div class="desktop__chrome-header-first-rightbar">
                         <i class="fa-solid fa-chevron-down"></i>
                         <i class="fa-solid fa-minus"></i>
-                        <i class="fa-regular fa-window-restore" id="minimiseChrome"></i>
+                        <i class="fa-regular fa-window-restore chrome" id="minimiseChrome"></i>
                         <i class="fa-solid fa-xmark" id="closeChrome"></i>
                     </div>
                 </div>
@@ -585,22 +575,25 @@
     <div class="taskbar taskbar--blur"></div>
     <div class="taskbar">
         <div class="taskbar__left">
+
+            <!-- Windows -->
             <div class="taskbar__left-windows taskbar--icon">
-                <i class="fa-brands fa-windows"></i>
+                <i class="fa-brands fa-windows" id="startMenu"></i>
             </div>
 
+            <!-- Search -->
             <div class="taskbar__left-search taskbar--icon">
                 <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
             </div>
 
-            <div class="taskbar__left-active">
-                <!-- Make Icons For Desktop Apps -->
-                <!-- Implicit Structure By Ordering Flex -->
 
+            <div class="taskbar__left-active">
+                <!-- Chrome -->
                 <div class="taskbar__left-active-chrome taskbar--icon">
                     <img src="./images/chrome.png" />
                 </div>
 
+                <!-- Calculator -->
                 <div class="taskbar__left-active-calculator taskbar--icon">
                     <img src="./images/calculator.png" />
                 </div>
@@ -609,8 +602,8 @@
 
         <div class="taskbar__right">
             <div class="taskbar__right-time">
-                <p>9:45 AM</p>
-                <p>19/12/2022</p>
+                <p id="time"></p>
+                <p id="date"></p>
             </div>
         </div>
     </div>

@@ -1,5 +1,3 @@
-import resize from "./resize.js";
-
 const googleChrome = document.querySelector(".desktop__chrome");
 const browserHomeForm = document.querySelector(".desktop__chrome-main-content-form");
 const browserSearchForm = document.querySelector(".desktop__chrome-search-header-first-form");
@@ -9,6 +7,7 @@ const googleSearchPage = document.querySelector(".desktop__chrome-search");
 const searchResultsHeader = document.querySelector(".desktop__chrome-search-header-second");
 const searchResultsMain = document.querySelector(".desktop__chrome-search-content");
 const chromeBackground = document.querySelector(".desktop__chrome-background");
+const chromeHeaderTop = document.querySelector(".desktop__chrome-header-first");
 const chromeHeader = document.querySelector(".desktop__chrome-header");
 
 const newTab = document.getElementById("newTab");
@@ -24,13 +23,20 @@ const minimiseChrome = document.getElementById("minimiseChrome");
 const chromeRefresh = document.getElementById("chromeRefresh");
 const chromeBack = document.getElementById("chromeBack");
 const chromeForward = document.getElementById("chromeForward");
+const chromeHistory = [{ search: "", page: "home" }];
 
 let searchInput = document.querySelector(".desktop__chrome-search-header-first-form-input");
+let currentHistory;
+let storedLeft;
+let storedTop;
 
 export default function chromeScripts() {
-    // Consider adding back and forward function
-    const chromeHistory = [{ search: "", page: "home" }];
-    let currentHistory;
+    // Chrome focus
+    document.addEventListener("mousedown", (e) => {
+        !e.target.className.includes("chrome")
+            ? chromeBackground.classList.add("unfocus")
+            : chromeBackground.classList.remove("unfocus");
+    })
 
     // Chrome Home Page - Form Submission
     browserHomeForm.addEventListener("submit", submitHomeForm);
@@ -52,7 +58,14 @@ export default function chromeScripts() {
 
     // Close Chrome
     closeChrome.addEventListener("click", () => {
-        googleChrome.classList.add("close");
+        chromeBackground.classList.add("opening");
+        chromeBackground.classList.add("hidden");
+
+        googleChrome.classList.add("opening");
+        setTimeout(() => {
+            googleChrome.classList.remove("openAnimation");
+            googleChrome.classList.add("hidden");
+        }, 150);
     });
 
     // Minimise Chrome
@@ -215,26 +228,35 @@ export default function chromeScripts() {
 }
 
 export function chromeMinimise() {
-    let storedLeft;
-    let storedTop;
-
     if (minimiseChrome.classList.contains("fa-window-restore")) {
-        googleChrome.classList.add("resize");
         minimiseChrome.classList.remove("fa-window-restore");
         minimiseChrome.classList.add("fa-square-full");
-        chromeBackground.classList.remove("hidden");
+        googleChrome.classList.add("resize");
+        chromeHeaderTop.classList.add("resize");
         chromeHeader.classList.add("resize");
 
-        googleChrome.style.left = storedLeft;
-        googleChrome.style.top = storedTop;
+        chromeBackground.classList.remove("hidden");
+        chromeBackground.classList.add("resize");
+
+        if (storedLeft && storedTop) {
+            chromeBackground.style.left = `calc(${storedLeft} - 2px)`;
+            chromeBackground.style.top = `calc(${storedTop} - 2px)`;
+            googleChrome.style.left = storedLeft;
+            googleChrome.style.top = storedTop;
+        }
     } else {
         minimiseChrome.classList.remove("fa-square-full");
         minimiseChrome.classList.add("fa-window-restore");
         googleChrome.classList.remove("resize");
-        chromeHeader.classList.remove("resize");
+        chromeHeaderTop.classList.remove("resize");
+
+        chromeBackground.classList.remove("resize");
+        chromeBackground.classList.add("hidden")
         storedLeft = googleChrome.style.left;
         storedTop = googleChrome.style.top;
 
+        chromeBackground.style.left = "0px";
+        chromeBackground.style.top = "0px";
         googleChrome.style.left = "0px";
         googleChrome.style.top = "0px";
     }
