@@ -8,14 +8,14 @@
     }
 
     &__chrome.resize {
-        width: 1000px;
-        height: 700px;
+        width: 55%;
+        height: 80%;
         z-index: 100;
     }
 
     &__chrome-background.resize {
-        width: 1004px;
-        height: 704px;
+        width: calc(55% + 4px);
+        height: calc(80% + 4px);
         z-index: 100;
     }
 
@@ -117,8 +117,6 @@
     &__chrome {
         position: absolute;
         background-color: white;
-        overflow-y: auto;
-        overflow-x: auto;
         height: 100%;
         width: 100%;
         z-index: 2;
@@ -413,11 +411,16 @@
             display: none;
         }
 
+        &-main.resize {
+            height: 88.7%;
+        }
+
         // Chrome Home
         &-main {
             display: flex;
             flex-direction: column;
             height: 92%;
+            overflow: auto;
 
             //Debugging
             // display: none;
@@ -635,13 +638,17 @@
         &-search.open {
             display: flex;
         }
+        
+        &-search.resize {
+            height: 88.7%
+        }
 
         // Chrome Search Results
         &-search {
             display: flex;
             flex-direction: column;
             overflow-y: auto;
-            overflow-x: auto;
+            height: 92%;
 
             // Debugging
             display: none;
@@ -810,7 +817,7 @@
             }
 
             &-content.blink {
-                display: none;
+               visibility: hidden;
             }
 
             &-content {
@@ -820,6 +827,7 @@
                 padding: .75rem 0;
                 padding-left: $google-padding-left;
                 font-size: .9rem;
+                height: 100%;
 
                 * {
                     cursor: text;

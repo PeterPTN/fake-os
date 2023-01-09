@@ -72,21 +72,25 @@
             height: 100%;
             display: flex;
 
-            &-chrome {
+            &-chrome  {
                 img {
                     padding: .525rem;
                     object-fit: contain;
                     width: 100%;
                     height: 100%;
+                    border-bottom: 2.5px solid transparent;
                 }
             }
 
-            &-calculator {
+            &-calculator, &-bin {
+                transition: opacity 15s, transform .15s;
+
                 img {
                     padding: .425rem;
                     object-fit: contain;
                     width: 100%;
                     height: 100%;
+                    border-bottom: 2.5px solid transparent;
                 }
             }
         }

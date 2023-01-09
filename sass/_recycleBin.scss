@@ -7,6 +7,10 @@
         border: 1px solid red;
     }
 
+    &__bin.openAnimation {
+        transition: opacity .15s, transform .15s;
+    }
+
     &__bin {
         display: flex;
         flex-direction: column;
@@ -14,11 +18,13 @@
         border: 1px solid rgba(128, 128, 128, 0.753);
         box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.281);
         width: 700px;
-        height: 500px;
-        position: relative;
-        top: 10rem;
-        margin: 0 auto;
+        height: 60%;
         transition: opacity .15s, transform .15s;
+        position: absolute;
+        z-index: 100;
+
+        left: 10%;
+        top: 15%;
 
         &-header {
             display: flex;
@@ -117,7 +123,7 @@
                     p {
                         display: flex;
                         align-items: center;
-                        ;
+                        user-select: none;
                     }
 
                     // Manage
@@ -293,7 +299,7 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        color: var(--grey);
+                        color: $grey;
                     }
 
                     p:nth-child(3) {

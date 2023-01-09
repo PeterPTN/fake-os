@@ -15,11 +15,37 @@
 
     <script defer src="./scripts/scripts.js" type="module"></script>
 
-    <title>Windows 10</title>
+    <title>Peter's Windows 10 FakeOS</title>
 </head>
+
+<parent>
+    <child></child>
+</parent>
 
 <body>
     <div class="desktop">
+        <div class="desktop__intro">
+            <div>
+                <h1>About This Project</h1>
+                <p>This is a single page app designed to mimic the UI/UX of a Windows 10 OS. It's made with HTML, SASS
+                    and vanilla JS.</p>
+                <p>Nothing actually works, it's all smoke and mirrors by way of DOM manipulation.</p>
+                <p>Currently the chrome app has a bunch of different functionality like:</p>
+                <ul>
+                    <li>Refresh</li>
+                    <li>Homepage</li>
+                    <li>Search</li>
+                    <li>History Scrawling</li>
+                </ul>
+                <p>In saying that, there is a bunch of other subtle details included too.</p>
+                <p>Try and spot them all.</p>
+                <p>(Functionality for other apps will come at a later date.)</p>
+
+                <button id="confirm">Okay</button>
+            </div>
+
+
+        </div>
 
         <!-- Start menu expand out right width:fitcontent -->
 
@@ -71,8 +97,15 @@
                 <p><img src="./images/file.png" /> Placeholder</p>
                 <p><img src="./images/file.png" /> Placeholder</p>
                 <p class="desktop__startmenu-rightcol-letter">C</p>
-                <p><img src="./images/calculator.png" /> Calculator</p>
-                <p><img src="./images/chrome.png" /> Chrome</p>
+
+                <span class="calculator">
+                    <p><img src="./images/calculator.png" /> Calculator</p>
+                </span>
+
+                <span class="chrome">
+                    <p><img src="./images/chrome.png" /> Chrome</p>
+                </span>
+
                 <p class="desktop__startmenu-rightcol-letter">D</p>
                 <p><img src="./images/file.png" /> Placeholder</p>
                 <p><img src="./images/file.png" /> Placeholder</p>
@@ -124,7 +157,7 @@
         </div>
 
         <!-- Bin -->
-        <div class="desktop__bin hidden opening openAnimation">
+        <div class="desktop__bin hidden opening openAnimation draggable">
             <header class="desktop__bin-header">
                 <div class="desktop__bin-header-first">
                     <div class="desktop__bin-header-first-leftbar">
@@ -146,7 +179,7 @@
                     </div>
 
                     <div class="desktop__bin-header-first-rightbar">
-                        <i class="fa-solid fa-minus"></i>
+                        <i class="fa-solid fa-minus" id="minimiseBin"></i>
                         <i class="fa-regular fa-square-full"></i>
                         <i id="binClose" class="fa-solid fa-xmark"></i>
                     </div>
@@ -269,7 +302,7 @@
         </div>
 
         <!-- Calculator -->
-        <section class="desktop__calculator hidden opening openAnimation">
+        <section class="desktop__calculator hidden opening openAnimation draggable">
             <header class="desktop__calculator-header">
                 <div class="desktop__calculator-header-first">
                     <div class="desktop__calculator-header-first-leftbar">
@@ -278,7 +311,7 @@
                     </div>
 
                     <div class="desktop__calculator-header-first-rightbar">
-                        <i class="fa-solid fa-minus"></i>
+                        <i class="fa-solid fa-minus" id="minimiseCalculator"></i>
                         <i class="fa-regular fa-square-full"></i>
                         <p id="calculatorClose">&#10005;</p>
                     </div>
@@ -392,8 +425,8 @@
 
                     <div class="desktop__chrome-header-first-rightbar">
                         <i class="fa-solid fa-chevron-down"></i>
-                        <i class="fa-solid fa-minus"></i>
-                        <i class="fa-regular fa-window-restore chrome" id="minimiseChrome"></i>
+                        <i class="fa-solid fa-minus" id="minimiseChrome"></i>
+                        <i class="fa-regular fa-window-restore chrome" id="restoreWindow"></i>
                         <i class="fa-solid fa-xmark" id="closeChrome"></i>
                     </div>
                 </div>
@@ -590,12 +623,17 @@
             <div class="taskbar__left-active">
                 <!-- Chrome -->
                 <div class="taskbar__left-active-chrome taskbar--icon">
-                    <img src="./images/chrome.png" />
+                    <img src="./images/chrome.png" id="chromeTaskApp" />
                 </div>
 
                 <!-- Calculator -->
                 <div class="taskbar__left-active-calculator taskbar--icon">
-                    <img src="./images/calculator.png" />
+                    <img src="./images/calculator.png" id="calculatorTaskApp" />
+                </div>
+
+                <!-- Bin -->
+                <div class="taskbar__left-active-bin taskbar--icon">
+                    <img src="./images/file.png" id="binTaskApp" class="hidden" />
                 </div>
             </div>
         </div>

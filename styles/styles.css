@@ -3,11 +3,8 @@
 .desktop__calculator.focus {
   border: 1px solid red;
 }
-.desktop__calculator.closeAnimation {
-  transition: opacity 0.15s, transform 1.5s;
-}
 .desktop__calculator.openAnimation {
-  transition: opacity 0.35s, transform 0.15s;
+  transition: opacity 0.15s, transform 0.15s;
 }
 .desktop__calculator {
   background-color: rgb(245, 245, 245);
@@ -17,6 +14,7 @@
   position: absolute;
   left: 20%;
   top: 15%;
+  z-index: 100;
 }
 .desktop__calculator-header {
   display: flex;
@@ -171,13 +169,13 @@
   transition: opacity 0.15s, transform 0.15s;
 }
 .desktop__chrome.resize {
-  width: 1000px;
-  height: 700px;
+  width: 55%;
+  height: 80%;
   z-index: 100;
 }
 .desktop__chrome-background.resize {
-  width: 1004px;
-  height: 704px;
+  width: calc(55% + 4px);
+  height: calc(80% + 4px);
   z-index: 100;
 }
 .desktop__chrome-background.unfocus * {
@@ -258,8 +256,6 @@
 .desktop__chrome {
   position: absolute;
   background-color: white;
-  overflow-y: auto;
-  overflow-x: auto;
   height: 100%;
   width: 100%;
   z-index: 2;
@@ -504,10 +500,14 @@
 .desktop__chrome-main.close {
   display: none;
 }
+.desktop__chrome-main.resize {
+  height: 88.7%;
+}
 .desktop__chrome-main {
   display: flex;
   flex-direction: column;
   height: 92%;
+  overflow: auto;
 }
 .desktop__chrome-main-header {
   display: flex;
@@ -683,11 +683,14 @@
 .desktop__chrome-search.open {
   display: flex;
 }
+.desktop__chrome-search.resize {
+  height: 88.7%;
+}
 .desktop__chrome-search {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  overflow-x: auto;
+  height: 92%;
   display: none;
 }
 .desktop__chrome-search-header {
@@ -828,7 +831,7 @@
   margin-left: auto;
 }
 .desktop__chrome-search-content.blink {
-  display: none;
+  visibility: hidden;
 }
 .desktop__chrome-search-content {
   display: flex;
@@ -837,6 +840,7 @@
   padding: 0.75rem 0;
   padding-left: 12vw;
   font-size: 0.9rem;
+  height: 100%;
 }
 .desktop__chrome-search-content * {
   cursor: text;
@@ -964,6 +968,9 @@
 .desktop__bin.focus {
   border: 1px solid red;
 }
+.desktop__bin.openAnimation {
+  transition: opacity 0.15s, transform 0.15s;
+}
 .desktop__bin {
   display: flex;
   flex-direction: column;
@@ -971,11 +978,12 @@
   border: 1px solid rgba(128, 128, 128, 0.753);
   box-shadow: 0px 0px 1rem rgba(0, 0, 0, 0.281);
   width: 700px;
-  height: 500px;
-  position: relative;
-  top: 10rem;
-  margin: 0 auto;
+  height: 60%;
   transition: opacity 0.15s, transform 0.15s;
+  position: absolute;
+  z-index: 100;
+  left: 10%;
+  top: 15%;
 }
 .desktop__bin-header {
   display: flex;
@@ -1057,6 +1065,7 @@
 .desktop__bin-header-first-middlebar p {
   display: flex;
   align-items: center;
+  user-select: none;
 }
 .desktop__bin-header-first-middlebar p:first-child {
   padding: 0 2rem;
@@ -1189,7 +1198,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--grey);
+  color: rgba(211, 211, 211, 0.5);
 }
 .desktop__bin-header-third-leftbar p:nth-child(3) {
   position: relative;
@@ -1438,7 +1447,7 @@
 }
 
 .desktop__startmenu.openAnimation {
-  transition: height 0.15s, transform 0.15s, opacity 0.15s;
+  transition: height 0.15s, transform 0.15s, opacity 0.125s;
 }
 .desktop__startmenu {
   position: absolute;
@@ -1586,12 +1595,17 @@
   object-fit: contain;
   width: 100%;
   height: 100%;
+  border-bottom: 2.5px solid transparent;
 }
-.taskbar__left-active-calculator img {
+.taskbar__left-active-calculator, .taskbar__left-active-bin {
+  transition: opacity 15s, transform 0.15s;
+}
+.taskbar__left-active-calculator img, .taskbar__left-active-bin img {
   padding: 0.425rem;
   object-fit: contain;
   width: 100%;
   height: 100%;
+  border-bottom: 2.5px solid transparent;
 }
 .taskbar__right {
   display: flex;
@@ -1607,6 +1621,67 @@
   font-size: 0.75rem;
   color: white;
 }
+.desktop__intro {
+  position: absolute;
+  top: 15vh;
+  left: 25vw;
+  width: 50%;
+  box-shadow: 0px 0px 0.5rem rgba(0, 0, 0, 0.432);
+  display: flex;
+  padding: 2.5rem 7.5rem;
+  column-gap: 2rem;
+  background: url("../images/windowsIcon.png"), linear-gradient(135deg, rgb(53, 70, 63), rgb(112, 161, 115));
+  background-blend-mode: luminosity;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right bottom;
+}
+.desktop__intro div:first-child {
+  flex: 2;
+  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 4rem;
+  flex: 1;
+}
+.desktop__intro div:first-child * {
+  color: rgb(233, 233, 233);
+}
+.desktop__intro div:first-child h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -2px;
+}
+.desktop__intro div:first-child p, .desktop__intro div:first-child li {
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+}
+.desktop__intro div:first-child li {
+  list-style: circle;
+  margin-left: 1.5rem;
+}
+.desktop__intro div:first-child button {
+  border: none;
+  margin: 0 auto;
+  padding: 0.5rem 1.25rem;
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0;
+  right: 0;
+  width: fit-content;
+  background-color: rgb(41, 56, 51);
+  color: white;
+  border-radius: 2px;
+}
+.desktop__intro div:first-child button:hover {
+  transform: scale(1.01);
+  filter: brightness(0.99);
+}
+.desktop__intro div:first-child button:active {
+  filter: brightness(0.9);
+}
+
 /* Global CSS styles */
 :root {
   font-size: 1rem;

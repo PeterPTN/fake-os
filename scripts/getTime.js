@@ -14,7 +14,7 @@ export default function getTime() {
         hours -= 12
         pastNoon = true;
     } else {
-        hours = 12
+        hours = currTime.getHours();
         pastNoon = false;
     }
 

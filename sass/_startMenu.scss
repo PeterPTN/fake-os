@@ -3,7 +3,7 @@
 .desktop {
     
     &__startmenu.openAnimation {
-        transition: height .15s, transform .15s, opacity .15s;
+        transition: height .15s, transform .15s, opacity .125s;
     }
 
       &__startmenu {

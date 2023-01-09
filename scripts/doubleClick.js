@@ -11,15 +11,26 @@ export default function doubleClick() {
             app.classList.remove("hidden");
             setTimeout(() => app.classList.remove("opening"), 100)
             setTimeout(() => {
-                app.classList.add("closeAnimation")
-
-            }, 355);
+                // Needed for Chrome closing animation
+                app.classList.add("openAnimation")
+            }, 150);
 
             // Open Chrome Resizer
             if (app.className.includes("chrome")) {
-                chromeBackground.classList.remove("opening")
-                chromeBackground.classList.remove("hidden")
+                chromeBackground.classList.remove("opening");
+                chromeBackground.classList.remove("hidden");
             };
+
+            if (app.className.includes("bin")) {
+                let bin = document.getElementById("binTaskApp")
+                bin.classList.remove("hidden");
+                bin.style.borderColor = "rgb(214, 179, 134)";
+            } else if (app.className.includes("chrome")) {
+                document.getElementById("chromeTaskApp").style.borderColor = "rgb(214, 179, 134)";
+            } else if (app.className.includes("calculator")) {
+                document.getElementById("calculatorTaskApp").style.borderColor = "rgb(214, 179, 134)";
+            }
+
 
             firstClick = 0;
             app = null;

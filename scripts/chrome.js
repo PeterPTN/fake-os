@@ -9,6 +9,7 @@ const searchResultsMain = document.querySelector(".desktop__chrome-search-conten
 const chromeBackground = document.querySelector(".desktop__chrome-background");
 const chromeHeaderTop = document.querySelector(".desktop__chrome-header-first");
 const chromeHeader = document.querySelector(".desktop__chrome-header");
+const chromeTaskApp = document.getElementById("chromeTaskApp");
 
 const newTab = document.getElementById("newTab");
 const chromeIcon = document.getElementById("chromeIcon");
@@ -18,12 +19,12 @@ const resultValue = document.getElementById("searchResult");
 const searchQuery = document.getElementById("searchButton");
 const closeChrome = document.getElementById("closeChrome");
 const chomeHomeBtn = document.getElementById("chromeHome");
-const minimiseChrome = document.getElementById("minimiseChrome");
+const restoreWindow = document.getElementById("restoreWindow");
 
 const chromeRefresh = document.getElementById("chromeRefresh");
 const chromeBack = document.getElementById("chromeBack");
 const chromeForward = document.getElementById("chromeForward");
-const chromeHistory = [{ search: "", page: "home" }];
+let chromeHistory = [{ search: "", page: "home" }];
 
 let searchInput = document.querySelector(".desktop__chrome-search-header-first-form-input");
 let currentHistory;
@@ -58,10 +59,20 @@ export default function chromeScripts() {
 
     // Close Chrome
     closeChrome.addEventListener("click", () => {
+        // Reset to Homepage
+        chromeHistory = [{ search: "", page: "home" }];
+        currentHistory = chromeHistory[chromeHistory.length - 1];
+        googleHomePage.classList.remove("close");
+        googleSearchPage.classList.remove("open");
+        chromeTaskApp.style.borderColor = "transparent";
+        browserHomeForm.reset();
+        checkArrows();
+
         chromeBackground.classList.add("opening");
         chromeBackground.classList.add("hidden");
-
         googleChrome.classList.add("opening");
+
+        googleHomePage
         setTimeout(() => {
             googleChrome.classList.remove("openAnimation");
             googleChrome.classList.add("hidden");
@@ -69,7 +80,7 @@ export default function chromeScripts() {
     });
 
     // Minimise Chrome
-    minimiseChrome.addEventListener("click", chromeMinimise);
+    restoreWindow.addEventListener("click", chromeRestoreWindow);
 
     // ----------------------------------
     // ------- Helper Functions ---------
@@ -225,39 +236,48 @@ export default function chromeScripts() {
             chromeRefresh.classList.remove("fa-xmark");
         }, storedLatency)
     }
-}
 
-export function chromeMinimise() {
-    if (minimiseChrome.classList.contains("fa-window-restore")) {
-        minimiseChrome.classList.remove("fa-window-restore");
-        minimiseChrome.classList.add("fa-square-full");
-        googleChrome.classList.add("resize");
-        chromeHeaderTop.classList.add("resize");
-        chromeHeader.classList.add("resize");
+    function chromeRestoreWindow() {
+        // Minimise button
+        if (restoreWindow.classList.contains("fa-window-restore")) {
+            restoreWindow.classList.remove("fa-window-restore");
+            restoreWindow.classList.add("fa-square-full");
+            googleChrome.classList.add("resize");
+            chromeHeaderTop.classList.add("resize");
+            chromeHeader.classList.add("resize");
+            googleSearchPage.classList.add("resize");
+            googleHomePage.classList.add("resize");
 
-        chromeBackground.classList.remove("hidden");
-        chromeBackground.classList.add("resize");
+            chromeBackground.classList.remove("hidden");
+            chromeBackground.classList.add("resize");
 
-        if (storedLeft && storedTop) {
-            chromeBackground.style.left = `calc(${storedLeft} - 2px)`;
-            chromeBackground.style.top = `calc(${storedTop} - 2px)`;
-            googleChrome.style.left = storedLeft;
-            googleChrome.style.top = storedTop;
+            if (storedLeft && storedTop) {
+                chromeBackground.style.left = `calc(${storedLeft} - 2px)`;
+                chromeBackground.style.top = `calc(${storedTop} - 2px)`;
+                googleChrome.style.left = storedLeft;
+                googleChrome.style.top = storedTop;
+            }
+
+            // Fullscreen button
+        } else {
+            restoreWindow.classList.remove("fa-square-full");
+            restoreWindow.classList.add("fa-window-restore");
+            googleChrome.classList.remove("resize");
+            chromeHeaderTop.classList.remove("resize");
+            chromeHeader.classList.remove("resize");
+            googleSearchPage.classList.remove("resize");
+            googleHomePage.classList.remove("resize");
+
+            chromeBackground.classList.remove("resize");
+            chromeBackground.classList.add("hidden")
+            storedLeft = googleChrome.style.left;
+            storedTop = googleChrome.style.top;
+
+            chromeBackground.style.left = "0px";
+            chromeBackground.style.top = "0px";
+            googleChrome.style.left = "0px";
+            googleChrome.style.top = "0px";
         }
-    } else {
-        minimiseChrome.classList.remove("fa-square-full");
-        minimiseChrome.classList.add("fa-window-restore");
-        googleChrome.classList.remove("resize");
-        chromeHeaderTop.classList.remove("resize");
-
-        chromeBackground.classList.remove("resize");
-        chromeBackground.classList.add("hidden")
-        storedLeft = googleChrome.style.left;
-        storedTop = googleChrome.style.top;
-
-        chromeBackground.style.left = "0px";
-        chromeBackground.style.top = "0px";
-        googleChrome.style.left = "0px";
-        googleChrome.style.top = "0px";
     }
 }
+
