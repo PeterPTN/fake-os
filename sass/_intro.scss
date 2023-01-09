@@ -33,6 +33,7 @@
                 font-size: 4vw;
                 margin-bottom: 1.5rem;
                 letter-spacing: -2px;
+                text-align: center;
             }
 
             p, li {
@@ -63,8 +64,7 @@
             }
 
             button:hover {
-                transform: scale(1.01);
-                filter: brightness(.99);
+                filter: brightness(.95);
             }
 
             button:active {

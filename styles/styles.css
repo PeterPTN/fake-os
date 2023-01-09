@@ -1652,6 +1652,7 @@
   font-size: 4vw;
   margin-bottom: 1.5rem;
   letter-spacing: -2px;
+  text-align: center;
 }
 .desktop__intro div:first-child p, .desktop__intro div:first-child li {
   font-size: 0.9rem;
@@ -1677,8 +1678,7 @@
   border-radius: 2px;
 }
 .desktop__intro div:first-child button:hover {
-  transform: scale(1.01);
-  filter: brightness(0.99);
+  filter: brightness(0.95);
 }
 .desktop__intro div:first-child button:active {
   filter: brightness(0.9);
