@@ -1,35 +1,11 @@
-export default function getTime() {
-    const time = document.getElementById("time");
-    const date = document.getElementById("date");
+export function getTime() {
+    let date = new Date;
+    let time = date.toLocaleTimeString("en-au").split("").slice(0, 4).join("");
+    let twelveHour = date.toLocaleTimeString("en-au").split("").slice(8).join("").toUpperCase();
+    return `${time} ${twelveHour}`;
+}
 
-    let pastNoon = false;
-    let currTime = new Date();
-    let year = currTime.getFullYear();
-    let month = currTime.getMonth() + 1;
-    let day = currTime.getDate();
-    let hours = currTime.getHours();
-    let minutes = currTime.getMinutes();
-
-    if (hours > 12) {
-        hours -= 12
-        pastNoon = true;
-    } else {
-        hours = currTime.getHours();
-        pastNoon = false;
-    }
-
-    if (minutes < 10) {
-        minutes = `0${minutes}`;
-    } else {
-        minutes = currTime.getMinutes();
-    }
-
-    if (month < 10) {
-        month = `0${month}`
-    } else {
-        month = currTime.getMonth() + 1;
-    }
-
-    time.innerText = `${hours}:${minutes} ${pastNoon ? `PM` : 'AM'}`;
-    date.innerText = `${day}/${month}/${year}`;
+export function getDate() {
+    let date = new Date;
+    return date.toLocaleDateString();
 }
