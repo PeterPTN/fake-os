@@ -25,3 +25,9 @@ const confirm = document.getElementById("confirm");
 confirm.addEventListener("click", (e) => {
     document.querySelector(".desktop__intro").classList.add("hidden")
 })
+
+
+// Refactor
+// Use this JS file to call util functions
+// Make util functions pure, pass args to use them
+// Look at Alex's snippet as example
